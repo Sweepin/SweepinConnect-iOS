@@ -1,0 +1,6 @@
+framework module Pods_SweepinConnect_Example {
+  umbrella header "Pods-SweepinConnect_Example-umbrella.h"
+
+  export *
+  module * { export * }
+}

@@ -1,0 +1,31 @@
+{
+  "name": "SweepinConnect",
+  "version": "0.1.0",
+  "summary": "The new era of location-based marketing",
+  "description": "TODO: Add long description of the pod here.",
+  "homepage": "https://github.com/Sweepin/SweepinConnect-iOS",
+  "license": "MIT",
+  "authors": {
+    "Alexis Barat": "alexis.barat@sweepin.fr"
+  },
+  "source": {
+    "git": "https://github.com/Sweepin/SweepinConnect-iOS.git",
+    "tag": "0.1.0"
+  },
+  "platforms": {
+    "ios": "8.0"
+  },
+  "resources": "Resources/ProximitiesSDK.bundle",
+  "vendored_frameworks": "SweepinConnect/ProximitiesSDK.framework",
+  "frameworks": [
+    "UIKit",
+    "CoreBluetooth",
+    "CoreLocation",
+    "SystemConfiguration",
+    "Foundation",
+    "AVFoundation",
+    "AVKit",
+    "CoreMedia"
+  ],
+  "libraries": "sqlite3.0"
+}

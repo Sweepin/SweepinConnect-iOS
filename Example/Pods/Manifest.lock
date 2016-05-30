@@ -1,0 +1,16 @@
+PODS:
+  - SweepinConnect (0.1.0)
+
+DEPENDENCIES:
+  - SweepinConnect (from `../`)
+
+EXTERNAL SOURCES:
+  SweepinConnect:
+    :path: ../
+
+SPEC CHECKSUMS:
+  SweepinConnect: ffc507c65b8dab2765cdfc9deb98837137e75111
+
+PODFILE CHECKSUM: 28326bbef75027959b2ec488d1a5045fd88a2fb8
+
+COCOAPODS: 1.0.0

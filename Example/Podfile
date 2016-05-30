@@ -1,0 +1,11 @@
+use_frameworks!
+
+target 'SweepinConnect_Example' do
+  pod 'SweepinConnect', :path => '../'
+
+  target 'SweepinConnect_Tests' do
+    inherit! :search_paths
+
+    
+  end
+end

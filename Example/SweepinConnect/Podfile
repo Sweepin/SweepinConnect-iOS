@@ -1,0 +1,5 @@
+source 'https://git.qraft.it/sweepin-connect-ios'
+
+target 'SweepinConnect-Example' do
+pod 'SweepinConnect'
+end
