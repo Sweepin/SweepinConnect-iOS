@@ -16,7 +16,7 @@ The Sweepin platform currently lets you choose from 6 types of animations:
 
 3) Webview : A notification that opens the app and displays an UIWebview object loading the url you choose inside an UIViewController.
 
-4) Audiovisual : notification that opens the app and displays an audio animation (containing an image in background, an audio file and texts in the web manager). 
+4) Audio : notification that opens the app and displays an audio animation (containing an image in background, an audio file and texts in the web manager). 
 
 5) Video : notification that opens the app and displays a video animation, containing a video file and texts in the web manager.
 
