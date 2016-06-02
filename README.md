@@ -1,4 +1,4 @@
-![Image of SweepinConnect](http://staging.sweepin.fr/img/sweepinconnect-logo.png =300x)
+![Image of SweepinConnect](Images/logoSweepinConnect.png =500x)
 
 [![CI Status](http://img.shields.io/travis/Alexis Barat/SweepinConnect.svg?style=flat)](https://travis-ci.org/Alexis Barat/SweepinConnect)
 [![Version](https://img.shields.io/cocoapods/v/SweepinConnect.svg?style=flat)](http://cocoapods.org/pods/SweepinConnect)

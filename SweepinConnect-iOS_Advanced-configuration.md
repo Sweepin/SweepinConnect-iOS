@@ -1,4 +1,4 @@
-![Image of SweepinConnect](http://staging.sweepin.fr/img/sweepinconnect-logo.png =300x)
+![Image of SweepinConnect](Images/logoSweepinConnect.png =500x)
 ___
 #SweepinConnect-iOS : Advanced configuration
 ##Table of contents
