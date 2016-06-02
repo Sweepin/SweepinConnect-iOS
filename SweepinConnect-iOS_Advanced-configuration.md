@@ -24,8 +24,9 @@ ___
 	- [Application Icon Badge](#generalOptionsAppIcon)
 	- [Advertising Identifier](#generalOptionsIDFA)
 <br/><br/>
+
 <div id='example'/>
-# SweepinConnect Example 
+#SweepinConnect Example 
 ___
 Because code is always more talking than words, we made an example project to show you how to use the SweepinConnect SDK methods.
 

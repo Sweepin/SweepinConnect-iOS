@@ -94,19 +94,6 @@ If not, you need to add them manually in your target's "Linked Frameworks and Li
 - AVFoundation.framework
 - libsqlite3.0.tbd
 
-###Background modes
-You also need to activate **background modes** for you app :
-For the use of beacons, this mode is required :
-
-- *Uses Bluetooth LE accessories*
-
-And in order to make geofencing working when your app is in background: 
-(since the release of iOS 9 SDK) 
-
-- *Location update*
-
-**These background modes have to be entered in your target's capabilities tab.**
-
 ###YourApp-Info.plist
 
 Since iOS 8 SDK, the key **NSLocationAlwaysUsageDescription** is required for the use of localisation in an app.
@@ -169,7 +156,7 @@ You just need to call *manageLocalNotificationForUserInfo:* on your AppDelegate'
 ###Congratulations, your app is now ready to go ! 
 #####Go to <a href='http://manager.sweepin.fr/admin/login/?ref=/'>The Sweepin Manager interface</a> to create your first animation !
 
-###For more options, see <a href='http://manager.sweepin.fr/admin/login/?ref=/'>SweepinConnect iOS : Advanced configuration</a>
+###For more options, see [SweepinConnect iOS : Advanced configuration](SweepinConnect-iOS_Advanced-configuration.md)
 *A bunch of methods are available to customize our SDK to fit your needs :*
 
 - *Show animations in UITableView / UICollectionView*
