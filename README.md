@@ -1,5 +1,7 @@
-![Image of SweepinConnect](Images/logoSweepinConnect.png =500x)
-
+<p align="center" >
+  <img src="Images/logoSweepinConnect-850x300.png" alt="SweepinConnectLogo" title="SweepinConnectLogo">
+</p>
+___
 [![CI Status](http://img.shields.io/travis/Alexis Barat/SweepinConnect.svg?style=flat)](https://travis-ci.org/Alexis Barat/SweepinConnect)
 [![Version](https://img.shields.io/cocoapods/v/SweepinConnect.svg?style=flat)](http://cocoapods.org/pods/SweepinConnect)
 [![License](https://img.shields.io/cocoapods/l/SweepinConnect.svg?style=flat)](http://cocoapods.org/pods/SweepinConnect)
