@@ -1,4 +1,6 @@
-![Image of SweepinConnect](Images/logoSweepinConnect.png =500x)
+<p align="center" >
+  <img src="Images/logoSweepinConnect-850x300.png" alt="SweepinConnectLogo" title="SweepinConnectLogo">
+</p>
 ___
 #SweepinConnect-iOS : Advanced configuration
 ##Table of contents
