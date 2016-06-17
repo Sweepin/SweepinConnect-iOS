@@ -41,6 +41,7 @@
 @property (strong, nonatomic) UIBarButtonItem *animationsCustomRightBarButtonItem;
 
 @property (nonatomic, assign) BOOL showIconBadgeNumber;
+@property (nonatomic, assign) BOOL enableAdvertisingIdentifier;
 /**
  * Enable the intrusive mode. When intrusive mode is enabled
  * every active zone the user crosses with his phone on his pocket, a notification will be triggered.

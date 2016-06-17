@@ -14,7 +14,7 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
-    [[PRX singleton]initWithAppId:@"test" andSecret:@"test"];
+    [[PRX singleton]initWithAppId:@"YOUR_APP_ID" andSecret:@"YOUR_APP_SECRET"];
     return YES;
 }
 

@@ -17,7 +17,6 @@
 
 /* Begin PBXFileReference section */
 		0A3D8D08D980983601FEE95D0BCB11AC /* Pods-SweepinConnect_Example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-SweepinConnect_Example-acknowledgements.plist"; sourceTree = "<group>"; };
-		3222A3CE3B385E53FD41242B87C00393 /* ProximitiesSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ProximitiesSDK.framework; path = SweepinConnect/ProximitiesSDK.framework; sourceTree = "<group>"; };
 		3354D22F0961891C2D3AA0C0B05DB47B /* Pods-SweepinConnect_Tests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-SweepinConnect_Tests-dummy.m"; sourceTree = "<group>"; };
 		382026315377EEE402A661F882C6E016 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		395858F6C471764A87FFCD87557DA3AE /* Pods-SweepinConnect_Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-SweepinConnect_Example-acknowledgements.markdown"; sourceTree = "<group>"; };
@@ -39,7 +38,6 @@
 		CE4C7CE0D43EDE7EC6D60A523C27BAB0 /* Pods-SweepinConnect_Example-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-SweepinConnect_Example-resources.sh"; sourceTree = "<group>"; };
 		CEC22C73C1608DFA5D5D78BDCB218219 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		CFA2540F1AAEE6810A7107968184BD20 /* Pods-SweepinConnect_Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-SweepinConnect_Tests.modulemap"; sourceTree = "<group>"; };
-		D53B6487202FC68478D773848B8E43B4 /* ProximitiesSDK.bundle */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "wrapper.plug-in"; path = ProximitiesSDK.bundle; sourceTree = "<group>"; };
 		F4826958904826EC585581B6E918C0D4 /* Pods-SweepinConnect_Tests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-SweepinConnect_Tests-acknowledgements.markdown"; sourceTree = "<group>"; };
 		FC35449DF02DF1D4DE244EB4165F4C6F /* Pods-SweepinConnect_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-SweepinConnect_Example.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -67,7 +65,6 @@
 		03208AFD1FAC66A6DB84ABF0285649F7 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				3222A3CE3B385E53FD41242B87C00393 /* ProximitiesSDK.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -75,7 +72,6 @@
 		23C685A496FE8291ABF25F73B27757A0 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				D53B6487202FC68478D773848B8E43B4 /* ProximitiesSDK.bundle */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
