@@ -148,6 +148,10 @@ If you want to implement our QR Code solution in your app, simply use :
 
 This controller can display Sweepin's animations, handle web-url and vCards.
 
+**Since iOS 10, you have to add a key in your app's plist, otherwise the app will crash when trying to access the camera : **
+    
+	"NSCameraUsageDescription" = "You need to let the app access your camera in order to scan a QRCode";    
+	
 <div id='PRXAnimationViewControllerDelegate'/>
 #The PRXAnimationViewControllerDelegate protocol 
 ___
