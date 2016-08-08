@@ -140,10 +140,11 @@ ___
 If you want to implement our QR Code solution in your app, simply use :
 
 	-(void)showQrCodeReader{
-    	PRXQrCodeReaderViewController *rootViewController =	[[PRXQrCodeReaderViewController alloc]init];
-	    [rootViewController setNavigationBarBackgroundColor:[UIColor yourColor]];
-    	[rootViewController setNavigationBarTintColor:[UIColor yourColor]];
-	    [self.navigationController pushViewController:rootViewController animated:YES];
+	    PRXQrCodeReaderViewController *qrCodeReaderViewController =		[[PRXQrCodeReaderViewController alloc]init];
+	    [qrCodeReaderViewController setNavigationBarBackgroundColor:[UIColor whiteColor]];
+	    [qrCodeReaderViewController setNavigationBarTintColor:[UIColor blackColor]];
+    	[[self navigationController]pushViewController:qrCodeReaderViewController animated:YES];
+
 	}
 
 This controller can display Sweepin's animations, handle web-url and vCards.

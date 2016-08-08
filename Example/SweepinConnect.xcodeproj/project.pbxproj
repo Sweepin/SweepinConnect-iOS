@@ -262,6 +262,8 @@
 				ORGANIZATIONNAME = "Alexis Barat";
 				TargetAttributes = {
 					6003F589195388D20070C39A = {
+						DevelopmentTeam = E6B4L73UU6;
+						DevelopmentTeamName = "Solo Agilis";
 						SystemCapabilities = {
 							com.apple.BackgroundModes = {
 								enabled = 1;

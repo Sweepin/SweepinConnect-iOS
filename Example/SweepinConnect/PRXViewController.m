@@ -8,6 +8,7 @@
 
 #import "PRXViewController.h"
 #import <ProximitiesSDK/PRX.h>
+#import <ProximitiesSDK/PRXQrCodeReaderViewController.h>
 
 @interface PRXViewController ()
 @property (weak, nonatomic) IBOutlet UIButton *showInTableViewBtn;
@@ -18,12 +19,22 @@
 
 - (void)viewDidLoad{
     [super viewDidLoad];
+    
     [_showInTableViewBtn.layer setCornerRadius:3];
     _showInTableViewBtn.titleLabel.textAlignment = NSTextAlignmentCenter;
 
     [_showInColViewBtn.layer setCornerRadius:3];
     _showInColViewBtn.titleLabel.textAlignment = NSTextAlignmentCenter;
 	// Do any additional setup after loading the view, typically from a nib.
+}
+
+- (IBAction)showQrCodeReaderAction:(id)sender {
+    PRXQrCodeReaderViewController *qrCodeReaderViewController =	[[PRXQrCodeReaderViewController alloc]init];
+    [qrCodeReaderViewController setNavigationBarBackgroundColor:[UIColor whiteColor]];
+    [qrCodeReaderViewController setNavigationBarTintColor:[UIColor blackColor]];
+    
+    [[self navigationController]pushViewController:qrCodeReaderViewController animated:YES];
+
 }
 
 - (void)didReceiveMemoryWarning{
