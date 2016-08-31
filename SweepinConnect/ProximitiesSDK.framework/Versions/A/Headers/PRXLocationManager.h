@@ -32,5 +32,6 @@
 - (UIViewController *)topViewController;
 - (void) initDefaultBeaconRegions;
 - (void)showPopupForSimpleNotification:(NSDictionary*)simpleNotification;
+-(void) manageNotificationForBeaconWithUUID:(NSString *)uuid major:(NSString *) major andMinor:(NSString *) minor;
 
 @end

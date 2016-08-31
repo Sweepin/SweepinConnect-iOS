@@ -232,5 +232,10 @@
  */
 -(void)preventAnimations:(BOOL)userChoice;
 
+/**
+ * Your app has been opened after scanning a QRCode with another app.
+ * This method send the QRCode url to our SDK, that check if a campaign has to be displayed.
+ */
+-(void)manageNotificationFromQrCodeUrl:(NSURL *)url;
 
 @end
