@@ -12,7 +12,6 @@
 
 @class PRXLocationManager;
 @class PRXWebService;
-@class PRXAppUser;
 
 @interface PRX : NSObject{
     PRXLocationManager *_locationManager;
@@ -23,10 +22,8 @@
 /* @todo :  put locationmanager on readonly for SDK  */
 @property (nonatomic,strong) PRXLocationManager *locationManager;
 @property (nonatomic,strong) PRXWebService *WSManager;
-@property (nonatomic,assign) float minDistanceForPoiAnimationsUpdates;
 @property (nonatomic,readonly) NSString *appId;
 @property (nonatomic,readonly) NSString *appSecret;
-@property (nonatomic,readonly) PRXAppUser *user;
 @property (nonatomic,readonly) BOOL animationIsPending;
 @property (nonatomic,assign) BOOL appMightBeKilled;
 @property (nonatomic,strong) id<PRXAnimationViewControllerDelegate> animationDelegate;
@@ -34,7 +31,6 @@
 @property (nonatomic, strong) NSDictionary* multipleAnimationsScreenProperties;
 @property (nonatomic, copy) void (^simpleNotificationActionBlock)(NSString*);
 @property (nonatomic, strong) NSDictionary* simpleAnimationPopupProperties;
-@property (nonatomic, assign) BOOL disableFavoriteOption;
 
 @property (nonatomic, copy) BOOL (^customUrlManagementBlock)(NSURL*, UIViewController*);
 
@@ -81,22 +77,9 @@
 - (void) manageLocalNotificationForUserInfo:(NSDictionary  *)userInfo;
 
 /**
- * Get a list of all Proximities partners
- */
--(NSArray*) getPartners;
--(NSArray*) getCategories;
-
-/**
  * Get the current proximities bundle
  */
 + (NSBundle *)bundle;
-
-/**
- * Return a dictionnary of key/value parameters
- * based on the http URI parameters.
- * Ex: name=test&value=3
- */
--(NSDictionary*)parametersFromQueryString:(NSString*)query;
 
 /**
  * With this method, you can set the PRXAnimationViewControllerDelegate delegate to a class that conforms to the protocol.
@@ -222,8 +205,7 @@
 /**
  * Get a NSArray object containing the current user's campaigns/animations by userAction (@"saved" to get the animations the user put into their favorites or @"anim_received" if you want the animations they received last).
  */
--(void) getAnimationsByUserAction:(NSString *)userAction withSuccessHandler:(void (^)(NSArray * animations))success
-                andFailureHandler:(void (^)(NSError *error))failure;
+-(void) getAnimationsByUserAction:(NSString *)userAction withSuccessHandler:(void (^)(NSArray * animations))success andFailureHandler:(void (^)(NSError *error))failure;
 
 /**
  * Prevent all animations to be displayed.
@@ -232,5 +214,10 @@
  */
 -(void)preventAnimations:(BOOL)userChoice;
 
+/**
+ * Your app has been opened after scanning a QRCode with another app.
+ * This method send the QRCode url to our SDK, that check if a campaign has to be displayed.
+ */
+-(void)manageNotificationFromQrCodeUrl:(NSURL *)url;
 
 @end

@@ -12,7 +12,7 @@
 
 @class PRXWebService;
 
-@interface PRXLocationManager : NSObject <CLLocationManagerDelegate, UIAlertViewDelegate>{
+@interface PRXLocationManager : NSObject <CLLocationManagerDelegate>{
     NSMutableArray *_beacons;
 }
 @property (nonatomic, readonly, strong) NSMutableArray *beacons;
@@ -32,5 +32,6 @@
 - (UIViewController *)topViewController;
 - (void) initDefaultBeaconRegions;
 - (void)showPopupForSimpleNotification:(NSDictionary*)simpleNotification;
+-(void) manageNotificationForBeaconWithUUID:(NSString *)uuid major:(NSString *) major andMinor:(NSString *) minor;
 
 @end
