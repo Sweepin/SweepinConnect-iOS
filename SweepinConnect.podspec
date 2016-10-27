@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = "SweepinConnect"
-  s.version          = "0.1.1"
+  s.version          = "0.1.21"
   s.summary          = "The new era of location-based marketing"
 
 # This description is used to generate tags and improve search results.
