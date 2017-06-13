@@ -34,9 +34,9 @@ ___
 To run the example project, clone the repo, and run `pod install` from the Example directory first.
 -->
 <br/>
-#Get Started
+# Get Started
 
-##Installation with Cocoapods
+## Installation with Cocoapods
 ___
 
 [CocoaPods](http://cocoapods.org) is a dependency manager for Objective-C, which automates and simplifies the process of using 3rd-party libraries like SweepinConnect in your projects. See the "Getting Started" guide for more information. You can install it with the following command:
@@ -45,14 +45,14 @@ ___
 
 * CocoaPods 0.39.0+ is required to build SweepinConnect 0.1.0
 
-###Podfile
+### Podfile
 To integrate SweepinConnect into your Xcode project using CocoaPods, specify it in your Podfile by simply adding the following line :
 
 ```
 pod "SweepinConnect"
 ```
 
-##Manual installation
+## Manual installation
 ___
 Download the **ProximitiesSDK.framework** and **ProximitiesSDK.bundle** files.
 
@@ -75,7 +75,7 @@ The iPhone 4 is only compatible with the geofencing technology.
 
 Finally, devices must have at least iOS 7.0 installed.
 
-#App configuration
+# App configuration
 ___
 In order to make our SDK working in your app, you have to link some popular frameworks. 
 
@@ -83,7 +83,7 @@ If you're using **Cocoapods**, these frameworkds are included automatically.
 
 If not, you need to add them manually in your target's "Linked Frameworks and Libraries" section.
 
-###SweepinConnect SDK requirements:
+### SweepinConnect SDK requirements:
  
 - CoreBluetooth.framework
 - CoreLocation.framework
@@ -95,7 +95,7 @@ If not, you need to add them manually in your target's "Linked Frameworks and Li
 - AVFoundation.framework
 - libsqlite3.0.tbd
 
-###YourApp-Info.plist
+### YourApp-Info.plist
 
 Since iOS 8 SDK, the key **NSLocationAlwaysUsageDescription** is required for the use of localisation in an app.
 
@@ -117,10 +117,10 @@ Since our SDK can integrate webviews that are pointing to other servers than our
 
 
 <br/>
-#Usage
+# Usage
 
 You're now two steps away from receiving your first animation in your app. But before it, a quick explanation on the heart of our SDK. Let me introduce you :
-###The PRX Singleton
+### The PRX Singleton
 ___
 The SweepinConnect SDK provides a unique singleton to access all methods. 
 
@@ -133,7 +133,7 @@ And then you can call the singleton:
     [[PRX singleton] anySDKMethod]
 
 
-###1/ Initialize the SDK
+### 1/ Initialize the SDK
 ___
 
 To authenticate within our API, use the PRX singleton with the *initWithAppId:andSecret:* method in your AppDelegate's *didFinishLaunchingWithOptions* method: 
@@ -142,10 +142,10 @@ To authenticate within our API, use the PRX singleton with the *initWithAppId:an
 
 *If you do not have your app id and secret -provided by the Sweepin registration process- please contact the [Sweepin team][1].*
     
-#####/!\ Be careful to keep your app secret for yourself.
+##### /!\ Be careful to keep your app secret for yourself.
 <br/>
 
-###2/ Suscribe to local notifications and animation display
+### 2/ Suscribe to local notifications and animation display
 ___
 
 You just need to call *manageLocalNotificationForUserInfo:* on your AppDelegate's *didReceiveLocalNotification:* method.
@@ -154,10 +154,10 @@ You just need to call *manageLocalNotificationForUserInfo:* on your AppDelegate'
     	[[PRX singleton] manageLocalNotificationForUserInfo:notification.userInfo];
     }
 
-###Congratulations, your app is now ready to go ! 
-#####Go to <a href='http://manager.sweepin.fr/admin/login/?ref=/'>The Sweepin Manager interface</a> to create your first animation !
+### Congratulations, your app is now ready to go ! 
+##### Go to <a href='http://manager.sweepin.fr/admin/login/?ref=/'>The Sweepin Manager interface</a> to create your first animation !
 
-###For more options, see [SweepinConnect iOS : Advanced configuration](SweepinConnect-iOS_Advanced-configuration.md)
+### For more options, see [SweepinConnect iOS : Advanced configuration](SweepinConnect-iOS_Advanced-configuration.md)
 *A bunch of methods are available to customize our SDK to fit your needs :*
 
 - *Show animations in UITableView / UICollectionView*
