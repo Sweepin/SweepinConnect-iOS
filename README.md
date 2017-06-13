@@ -2,9 +2,10 @@
   <img src="Images/logoSweepinConnect-850x300.png" alt="SweepinConnectLogo" title="SweepinConnectLogo">
 </p>
 ___
-[![Version](https://img.shields.io/cocoapods/v/SweepinConnect.svg?style=flat)](http://cocoapods.org/pods/SweepinConnect)
-[![License](https://img.shields.io/cocoapods/l/SweepinConnect.svg?style=flat)](http://cocoapods.org/pods/SweepinConnect)
-[![Platform](https://img.shields.io/cocoapods/p/SweepinConnect.svg?style=flat)](http://cocoapods.org/pods/SweepinConnect)
+
+
+[![Badge w/ Version](https://cocoapod-badges.herokuapp.com/v/SweepinConnect/badge.png)](https://cocoadocs.org/docsets/SweepinConnect)
+[![Badge w/ Platform](https://cocoapod-badges.herokuapp.com/p/SweepinConnect/badge.svg)](https://cocoadocs.org/docsets/SweepinConnect)
 
 SweepinConnect is a location-based marketing tool for iOS. By integrating our system in your application, you are quickly ready to go with the **iBeacon technology**, along with the geofencing system.
 
@@ -34,6 +35,7 @@ ___
 To run the example project, clone the repo, and run `pod install` from the Example directory first.
 -->
 <br/>
+
 # Get Started
 
 ## Installation with Cocoapods
