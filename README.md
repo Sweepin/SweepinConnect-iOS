@@ -1,8 +1,6 @@
 <p align="center" >
   <img src="Images/logoSweepinConnect-850x300.png" alt="SweepinConnectLogo" title="SweepinConnectLogo">
 </p>
-___
-
 
 [![Badge w/ Version](https://cocoapod-badges.herokuapp.com/v/SweepinConnect/badge.png)](https://cocoadocs.org/docsets/SweepinConnect)
 [![Badge w/ Platform](https://cocoapod-badges.herokuapp.com/p/SweepinConnect/badge.svg)](https://cocoadocs.org/docsets/SweepinConnect)
@@ -170,8 +168,10 @@ You just need to call *manageLocalNotificationForUserInfo:* on your AppDelegate'
 
 
 <br/>	
+
 ## License
 ___
+
 SweepinConnect is available under the MIT license. See the LICENSE file for more info.
 
   [1]: http://www.sweepin.fr/contact

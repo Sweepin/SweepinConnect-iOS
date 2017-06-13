@@ -1,7 +1,8 @@
 <p align="center" >
   <img src="Images/logoSweepinConnect-850x300.png" alt="SweepinConnectLogo" title="SweepinConnectLogo">
 </p>
-___
+
+
 # SweepinConnect-iOS : Advanced configuration
 ## Table of contents
 
@@ -28,6 +29,7 @@ ___
 <br/><br/>
 
 <div id='example'/>
+
 # SweepinConnect Example 
 ___
 Because code is always more talking than words, we made an example project to show you how to use the SweepinConnect SDK methods.
@@ -35,6 +37,7 @@ Because code is always more talking than words, we made an example project to sh
 To run it, clone the repo, and run `pod install` from the Example directory.
 <br/><br/>
 <div id='showAnim'/>
+
 # Showing user's animations
 ___
 Registered and non-registered users can receive and archive animations. The Sweepin SDK provides a built-in way to show animations for a user, in a customizable pop-in.
@@ -42,6 +45,7 @@ Registered and non-registered users can receive and archive animations. The Swee
 The **userAction** parameter allow you to get users favorites (userAction = @"saved") or received (userAction = @"anim_received") animations.
 
 <div id='showAnimColView'/>
+
 ### Nice preview collectionViewController with curved layout
 ___
 You can for example add a UIButton somewhere in your app's user interface.
@@ -68,6 +72,7 @@ If your app is embedded in a navigation controller, you can also display that li
     [[PRX singleton] pushAnimationsCollectionViewControllerWithUIAttributes:dict fromCurrentViewController:self forUserAction:userAction];
  
 <div id='showAnimTableView'/>
+
 ### Simple preview in UITableView
 ___
 Another template to show user's animations use an UITableView.
@@ -91,6 +96,7 @@ Or if your app is embedded in a navigation controller :
 	     forUserAction:(NSString *)userAction{
 
 <div id='showAnimCustomTableView'/>
+
 ### Custom UITableView
 ___
 The UIViewController **PRXAnimationsTableViewControllerDelegate** implement all the necessary methods to get user's animations and display them into an UITableView.
@@ -116,6 +122,7 @@ Here is an example how to use :
 ----------
 
 <div id='getAnim'/>
+
 # Get the user's archived animations
 The SDK provide a convenient method to get user's animations.
 
@@ -135,6 +142,7 @@ The userAction parameter allow you to get users favorites (userAction = @"saved"
 This method return a NSArray object with user's animations.
 
 <div id='qrCodeReader'/>
+
 # Implement PRXQRCodeReader
 ___
 If you want to implement our QR Code solution in your app, simply use :
@@ -154,6 +162,7 @@ This controller can display Sweepin's animations, handle web-url and vCards.
 	"NSCameraUsageDescription" = "You need to let the app access your camera in order to scan a QRCode";    
 	
 <div id='PRXAnimationViewControllerDelegate'/>
+
 # The PRXAnimationViewControllerDelegate protocol 
 ___
 For non-simple notification cases, the SDK provides a delegate that you can adopt to manage user interactions.
@@ -180,6 +189,7 @@ Theses delegate are triggered the first time an user sees an animation (no deleg
 In your delegate's method implementation, you can now handle a specific action for this set of animations.
 
 <div id='segUser'/>
+
 # Store user infos for segmented animations
 ___
 At one point, your app's customer is going to login (or auto-login) to your app.
@@ -201,9 +211,11 @@ Registering users is the way to send segmented animations on a specific group of
 
 
 <div id='preventAnim'/>
+
 # Prevent and restart the display of animations
 ___
 <div id='preventAnimDeveloperChoice'/>
+
 ### In your methods
 ___
 In some cases, you'll want to prevent the display of animations. 
@@ -219,6 +231,7 @@ To restart the display after, use:
 
 
 <div id='preventAnimUserChoice'/>
+
 ### By user choice
 ___
 You can also give to your users the possibility to prevent all animations to be displayed. Here is an example of a possible IBAction: 
@@ -235,6 +248,7 @@ You can also give to your users the possibility to prevent all animations to be 
 
 
 <div id='pushInApp'/>
+
 # Push in app
 ___
  To manage the case of a simple notification with push in app, you have to declare a block and call *setSimpleNotificationActionBlock:* on your AppDelegate's *willFinishLaunchingWithOptions:* method.
@@ -268,10 +282,12 @@ When the app is running, simple notifications will appear in a pop-up view. You 
 >**Note:** The *simpleNotificationActionBlock* is executed in the main thread.
 
 <div id='generalOptions'/>
+
 # General options
 ___
 
 <div id='generalOptionsDistanceFilter'/>
+
 ### Location manager distance filter
 ___
 The location manager distance filter for geofencing animations.
@@ -281,6 +297,7 @@ The location manager distance filter for geofencing animations.
 ----------
 
 <div id='generalOptionsLocalizable'/>
+
 ### Confirmation messages 
 ___
 You can set messages to display alerts relative to the SDK. The keys/strings values can be set in the Localizable.strings files of ProximitiesSDK.bundle.
@@ -322,6 +339,7 @@ If you don't specify a title, the corresponding alert won't show.
 The last two keys will not be used if you call *presentFavoritesListViewControllerWithUIAttributes:* or *pushFavoritesListViewControllerWithUIAttributes:* methods.
 
 <div id='generalOptionsInAppUrl'/>
+
 ### Manage in-app urls from animations
 ___
 
@@ -347,6 +365,7 @@ You can define a block in your AppDelegate's *didFinishLaunchingWithOptions:* me
     [[PRX singleton]setCustomUrlManagementBlock:customUrlManagementBlock];
 
 <div id='generalOptionsRightBarButton'/>
+
 ### Custom right bar button in animations
 ___
 The heart icon and all associated actions are fully configurable. You can create your own *UIBarButtonItem* in your AppDelegate's *didFinishLaunchingWithOptions:* method.
@@ -355,6 +374,7 @@ The heart icon and all associated actions are fully configurable. You can create
     [[PRX singleton]setAnimationsCustomRightBarButtonItem:customBarButtonItem];
 
 <div id='generalOptionsAppIcon'/>
+
 ### Application Icon Badge
 ___
 Our SDK show by default an appIcon badge when it receive a notification. If you need to disable this option, you can set a boolean after your *initWithAppId:* method.
@@ -364,6 +384,7 @@ Our SDK show by default an appIcon badge when it receive a notification. If you 
 
 
 <div id='generalOptionsIDFA'/>
+
 ### Advertising Identifier
 ___
 
