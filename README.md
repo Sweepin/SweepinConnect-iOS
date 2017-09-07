@@ -5,27 +5,27 @@
 [![Badge w/ Version](https://cocoapod-badges.herokuapp.com/v/SweepinConnect/badge.png)](https://cocoadocs.org/docsets/SweepinConnect)
 [![Badge w/ Platform](https://cocoapod-badges.herokuapp.com/p/SweepinConnect/badge.svg)](https://cocoadocs.org/docsets/SweepinConnect)
 
-SweepinConnect is a location-based marketing tool for iOS. By integrating our system in your application, you are quickly ready to go with the **iBeacon technology**, along with the geofencing system.
+SweepinConnect-iOS is a location-based marketing and service tool for iOS. With this SDK, you can fully experience several technologies like iBeacon, Eddystone, real geofencing, 2D barcodes.
 
-Our solution is linked to an intuitive back-office interface, <a href='http://manager.sweepin.fr/admin/login/?ref=/'>Sweepin Manager</a>. It let you create your campaigns online in no time and broadcast to your audience.
-Watch the analytics data on our charts, and get the visitor's traffic in real time.
+Our solution is linked to an intuitive back-office interface, <a href='http://manager.sweepin.fr/'>Sweepin Manager</a>. It let you create your campaigns (rich animations) online in no time and broadcast to your audience.
+You can get useful metrics like visits, visitors, campaigns reception and users behavior.
 
 <!--
-The Sweepin platform currently lets you choose from 6 types of animations: 
+The Sweepin Connect platform lets you choose between multiple type of campaign/animation templates: 
 
-1) Simple: simple notification that will be triggered when detecting the associated beacon, and will simply open the app. You can then handle what to do, like deep linking the push (ex: open a specific view controller)
+1) Simple: simple notification that will be triggered when detecting the associated beacon or transmitter, and will simply open the app. You can then manage what to do, for exemple creating custom actions like deep links to open a specific view in your app.
 
-2) Rich: notification that opens the app and displays a rich animation (custom images, colors, texts in the web manager). 
+2) Rich: notification that opens the app and displays a rich animation (custom images, videos, links, colors, texts in the web manager with a rich HTML editor). 
 
 3) Webview : A notification that opens the app and displays an UIWebview object loading the url you choose inside an UIViewController.
 
-4) Audio : notification that opens the app and displays an audio animation (containing an image in background, an audio file and texts in the web manager). 
+4) Audio : notification that opens the app and displays an audio animation (containing an image in background, an audio file and texts in the web manager).
 
-5) Video : notification that opens the app and displays a video animation, containing a video file and texts in the web manager.
+5) Full screen image : notification that opens an animation with a full screen image on the phone.
 
-6) Loyalty : notification that opens the app and displays a loyalty animation. On each connection with the related transmitter, the loyalty template receive one more stamp.
+6) Loyalty : notification that opens the app and displays a stamps-based loyalty animation. On each connection with the related transmitter, the loyalty template receive one more stamp.
 
-All these animations include a custom delegate to handle user interactions.
+All these campaigns/animations include a delegate to handle user interactions and create custom actions.
 -->
 
 <!--## Example project
@@ -79,7 +79,7 @@ Finally, devices must have at least iOS 7.0 installed.
 ___
 In order to make our SDK working in your app, you have to link some popular frameworks. 
 
-If you're using **Cocoapods**, these frameworkds are included automatically. 
+If you're using **Cocoapods**, these frameworks are included automatically. 
 
 If not, you need to add them manually in your target's "Linked Frameworks and Libraries" section.
 
@@ -160,7 +160,7 @@ You just need to call *manageLocalNotificationForUserInfo:* on your AppDelegate'
 ### For more options, see [SweepinConnect iOS : Advanced configuration](SweepinConnect-iOS_Advanced-configuration.md)
 *A bunch of methods are available to customize our SDK to fit your needs :*
 
-- *Show animations in UITableView / UICollectionView*
+- *Show campaigns/animations in UITableView / UICollectionView*
 - *Create custom actions on reception* 
 - *Integrate a QRCode reader in your app*
 - *Register your users' properties to send segmented animations on specific groups*
