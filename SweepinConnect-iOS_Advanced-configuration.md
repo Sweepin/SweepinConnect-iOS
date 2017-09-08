@@ -7,7 +7,7 @@
 ## Table of contents
 
 - [SweepinConnect Example](#example)
-- [Showing user's animations](#showAnim)
+- [Showing user's received campaigns/animations](#showAnim)
      - [Nice preview collectionViewController with curved layout](#showAnimColView)
      - [Simple preview in UITableView](#showAnimTableView)
      - [Custom UITableView](#showAnimCustomTableView)
@@ -32,17 +32,19 @@
 
 # SweepinConnect Example 
 ___
-Because code is always more talking than words, we made an example project to show you how to use the SweepinConnect SDK methods.
+Because code is always better than explanations, we made an example project to show you how to use the SweepinConnect SDK methods.
 
 To run it, clone the repo, and run `pod install` from the Example directory.
+**Important note :** please be aware that the notion of campaign and animation is the same thing. We usually use the word campaign on the back office and the word animations on the SDK.
 <br/><br/>
 <div id='showAnim'/>
 
-# Showing user's animations
+# Showing user's received campaigns/animations
 ___
-Registered and non-registered users can receive and archive animations. The Sweepin SDK provides a built-in way to show animations for a user, in a customizable pop-in.
+Registered and non-registered users that receive campaigns/animations may want to keep them for later. The Sweepin SDK provides a built-in way to show already received campaigns/animations for an user, in a customizable view or raw datas.
 
-The **userAction** parameter allow you to get users favorites (userAction = @"saved") or received (userAction = @"anim_received") animations.
+The **userAction** parameter allow you to get users favorites (userAction = @"saved") or received (userAction = @"anim_received") campaigns/animations.
+**Important note : ** the userAction @"saved" is now deprecated. Use the @"anim_received" userAction instead.
 
 <div id='showAnimColView'/>
 
@@ -60,7 +62,7 @@ Here is an example of a possible IBAction:
                            @"topbarTintColor":[UIColor whiteColor],
                            @"emptyCaseTitle" : @"Aucun élément disponible actuellement"
                            };
-    [[PRX singleton] presentAnimationsCollectionViewControllerWithUIAttributes:dict forUserAction:userAction];
+    [[PRX singleton] presentAnimationsCollectionViewControllerWithUIAttributes:dict forUserAction:@"anim_received"];
     }
 
 
@@ -87,7 +89,7 @@ You can customize the view. Here is an example how to use this method :
 		@"topBarTintColor":@"ffffff",
 		@"topBarBackgroundColor":@"d54586",
 		@"topBarTitle":@"Notifications"
-	forUserAction:@"saved"];
+	forUserAction:@"anim_received"];
    
 Or if your app is embedded in a navigation controller : 
 
@@ -99,7 +101,7 @@ Or if your app is embedded in a navigation controller :
 
 ### Custom UITableView
 ___
-The UIViewController **PRXAnimationsTableViewControllerDelegate** implement all the necessary methods to get user's animations and display them into an UITableView.
+The UIViewController **PRXAnimationsTableViewControllerDelegate** implement all the necessary methods to get user's animations/campaigns and display them into an UITableView.
 By this way, you can create your own UITableView inside your controllers and use it to display the animations.
 Here is an example how to use :
 
@@ -123,12 +125,12 @@ Here is an example how to use :
 
 <div id='getAnim'/>
 
-# Get the user's archived animations
-The SDK provide a convenient method to get user's animations.
+# Get the user's archived animations/campaigns
+The SDK provide a convenient method to get user's animations/campaigns.
 
-The userAction parameter allow you to get users favorites (userAction = @"saved") or received (userAction = @"anim_received") animations.
+The userAction parameter allow you to get users received (userAction = @"anim_received") animations.
 
-	[[PRX singleton]getAnimationsByUserAction:@"saved" withSuccessHandler:^(NSArray *animations) {
+	[[PRX singleton]getAnimationsByUserAction:@"anim_received" withSuccessHandler:^(NSArray *animations) {
         if ([animations count] == 0) {
         	// Result is empty 
         }else{
@@ -139,7 +141,7 @@ The userAction parameter allow you to get users favorites (userAction = @"saved"
     }];
 
 
-This method return a NSArray object with user's animations.
+This method return a NSArray object with user's animations/campaigns.
 
 <div id='qrCodeReader'/>
 
