@@ -1,16 +1,27 @@
 PODS:
-  - SweepinConnect (0.1.0)
+  - Realm (2.10.0):
+    - Realm/Headers (= 2.10.0)
+  - Realm/Headers (2.10.0)
+  - SCSDKCoreKit (2.0.0):
+    - Realm
+  - SCSDKProximityServiceKit (2.0.0):
+    - SCSDKCoreKit
 
 DEPENDENCIES:
-  - SweepinConnect (from `../`)
+  - SCSDKCoreKit (from `../`)
+  - SCSDKProximityServiceKit (from `../`)
 
 EXTERNAL SOURCES:
-  SweepinConnect:
+  SCSDKCoreKit:
+    :path: ../
+  SCSDKProximityServiceKit:
     :path: ../
 
 SPEC CHECKSUMS:
-  SweepinConnect: ffc507c65b8dab2765cdfc9deb98837137e75111
+  Realm: 98b3a25643cf6b3e07d2b99fb43fe0eb9c801dec
+  SCSDKCoreKit: a2cc8b812fb6ae5a8de7695f4c89aba2f018a42a
+  SCSDKProximityServiceKit: 41e5f4e7133d8a5eda84fb713c4147875806959c
 
-PODFILE CHECKSUM: 28326bbef75027959b2ec488d1a5045fd88a2fb8
+PODFILE CHECKSUM: 5a3b6c89a28087ded17861d72d64fb50fbb11e70
 
-COCOAPODS: 1.0.0
+COCOAPODS: 1.2.0

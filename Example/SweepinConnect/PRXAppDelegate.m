@@ -7,14 +7,16 @@
 //
 
 #import "PRXAppDelegate.h"
-#import <ProximitiesSDK/PRX.h>
+@import SCSDKProximityServiceKit;
 
 @implementation PRXAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
-    [[PRX singleton]initWithAppId:@"YOUR_APP_ID" andSecret:@"YOUR_APP_SECRET"];
+    [[SCSDKProximityService sharedInstance]initWithAppId:@"tes59b924541a2b3" andSecret:@"a338258c-bd1c-4aa1-a6b7-5ae3af84afc2"];
+    [[SCSDKProximityService sharedInstance]start];
+    
     return YES;
 }
 
@@ -46,7 +48,7 @@
 }
 
 - (void)application:(UIApplication *)application didReceiveLocalNotification:(UILocalNotification *)notification{
-    [[PRX singleton]manageLocalNotificationForUserInfo:notification.userInfo];
+    [[SCSDKProximityService sharedInstance]manageLocalNotificationWithUserInfo:notification.userInfo];
 }
 
 @end

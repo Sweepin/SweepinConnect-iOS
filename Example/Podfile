@@ -1,7 +1,8 @@
 use_frameworks!
 
 target 'SweepinConnect_Example' do
-  pod 'SweepinConnect', :path => '../'
+  pod 'SCSDKCoreKit', :path => '../'
+  pod 'SCSDKProximityServiceKit', :path => '../'
 
   target 'SweepinConnect_Tests' do
     inherit! :search_paths

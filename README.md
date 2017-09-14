@@ -1,43 +1,24 @@
 <p align="center" >
-  <img src="Images/logoSweepinConnect-850x300.png" alt="SweepinConnectLogo" title="SweepinConnectLogo">
+  <img src="http://connect.sweepin.net/img/logo/sweepin-connect-850x300.png" alt="SweepinConnectLogo" title="SweepinConnectLogo">
 </p>
 
-[![Badge w/ Version](https://cocoapod-badges.herokuapp.com/v/SweepinConnect/badge.png)](https://cocoadocs.org/docsets/SweepinConnect)
-[![Badge w/ Platform](https://cocoapod-badges.herokuapp.com/p/SweepinConnect/badge.svg)](https://cocoadocs.org/docsets/SweepinConnect)
+[![Version](https://img.shields.io/cocoapods/v/SweepinConnect.svg?style=flat)](http://cocoapods.org/pods/SweepinConnect)
+[![License](https://img.shields.io/cocoapods/l/SweepinConnect.svg?style=flat)](http://cocoapods.org/pods/SweepinConnect)
+[![Platform](https://img.shields.io/cocoapods/p/SweepinConnect.svg?style=flat)](http://cocoapods.org/pods/SweepinConnect)
 
-SweepinConnect-iOS is a location-based marketing and service tool for iOS. With this SDK, you can fully experience several technologies like iBeacon, Eddystone, real geofencing, 2D barcodes.
+SweepinConnect is a location-based marketing tool for iOS. By integrating our system in your application, you are quickly ready to go with the **iBeacon technology**, along with the geofencing system.
 
-Our solution is linked to an intuitive back-office interface, <a href='http://manager.sweepin.fr/'>Sweepin Manager</a>. It let you create your campaigns (rich animations) online in no time and broadcast to your audience.
-You can get useful metrics like visits, visitors, campaigns reception and users behavior.
-
-<!--
-The Sweepin Connect platform lets you choose between multiple type of campaign/animation templates: 
-
-1) Simple: simple notification that will be triggered when detecting the associated beacon or transmitter, and will simply open the app. You can then manage what to do, for exemple creating custom actions like deep links to open a specific view in your app.
-
-2) Rich: notification that opens the app and displays a rich animation (custom images, videos, links, colors, texts in the web manager with a rich HTML editor). 
-
-3) Webview : A notification that opens the app and displays an UIWebview object loading the url you choose inside an UIViewController.
-
-4) Audio : notification that opens the app and displays an audio animation (containing an image in background, an audio file and texts in the web manager).
-
-5) Full screen image : notification that opens an animation with a full screen image on the phone.
-
-6) Loyalty : notification that opens the app and displays a stamps-based loyalty animation. On each connection with the related transmitter, the loyalty template receive one more stamp.
-
-All these campaigns/animations include a delegate to handle user interactions and create custom actions.
--->
-
-<!--## Example project
-___
-To run the example project, clone the repo, and run `pod install` from the Example directory first.
--->
-<br/>
+Our solution is linked to an intuitive back-office interface, <a href='https://connect.sweepin.fr/admin/login'>Sweepin Connect</a>. It let you create your campaigns online in no time and broadcast to your audience.
+Watch the analytics data on our charts, and get the visitor's traffic in real time.
 
 # Get Started
 
-## Installation with Cocoapods
-___
+## Requirements
+
+To use our Proximity Service SDK, devices must have at least **iOS 8.1** installed
+
+##Installation with Cocoapods
+
 
 [CocoaPods](http://cocoapods.org) is a dependency manager for Objective-C, which automates and simplifies the process of using 3rd-party libraries like SweepinConnect in your projects. See the "Getting Started" guide for more information. You can install it with the following command:
 
@@ -45,68 +26,39 @@ ___
 
 * CocoaPods 0.39.0+ is required to build SweepinConnect 0.1.0
 
-### Podfile
-To integrate SweepinConnect into your Xcode project using CocoaPods, specify it in your Podfile by simply adding the following line :
+###Podfile
+To integrate our ProximityService solution into your Xcode project using CocoaPods, specify it in your Podfile by simply adding the following packages :
 
 ```
-pod "SweepinConnect"
+pod 'SCDSDKCoreKit'
+pod 'SCDSDKProximityServiceKit'
 ```
 
-## Manual installation
-___
-Download the **ProximitiesSDK.framework** and **ProximitiesSDK.bundle** files.
+##Manual installation
+
+Download the **SCSDKCoreKit.framework**, **SCSDKProximityServiceKit.framework** and **SCSDKResourcesForProximityServiceKit.bundle** files.
 
 Two simple steps to integrate :
 
-- Simply drag the **ProximitiesSDK.framework** file into your Frameworks project's folder in XCode. Don't choose the "copy items into destination's group folder" option, as you may want to only use references.  
-- Then drag the ProximitiesSDK.bundle in your project. In your project's target settings, open the build phase tab, and add the ProximitiesSDK.bundle file in the Copy Bundle Resources section (in most case, the bundle will automatically be added). This bundle contains the nibs and images.
+- Drag the **SCSDKCoreKit.framework** and **SCSDKProximityServiceKit.framework** files into your Frameworks project's folder in XCode. Don't choose the "copy items into destination's group folder" option, as you may want to only use references.  
+- Then drag the **SCSDKResourcesForProximityServiceKit.bundle** in your project. In your project's target settings, open the build phase tab, and add the **SCSDKResourcesForProximityServiceKit.bundle** file in the Copy Bundle Resources section (in most case, the bundle will automatically be added). This bundle contains the nibs and images.
 
 
-## Requirements
-___
+#App configuration
 
-For use with beacons technology, devices must support Bluetooth LE 4.0 : 
 
-- iPhones 4S and later.
-- iPad 3 and later.
-- iPod 5 and later.
+###Info.plist
 
-The iPhone 4 is only compatible with the geofencing technology.
+To use location services in your app, you have to add the **NSLocationAlwaysUsageDescription** key:
 
-Finally, devices must have at least iOS 7.0 installed.
-
-# App configuration
-___
-In order to make our SDK working in your app, you have to link some popular frameworks. 
-
-If you're using **Cocoapods**, these frameworks are included automatically. 
-
-If not, you need to add them manually in your target's "Linked Frameworks and Libraries" section.
-
-### SweepinConnect SDK requirements:
- 
-- CoreBluetooth.framework
-- CoreLocation.framework
-- SystemConfiguration.framework
-- UIKit.framework
-- Foundation.framework
-- AVKit.framework
-- CoreMedia.framework
-- AVFoundation.framework
-- libsqlite3.0.tbd
-
-### YourApp-Info.plist
-
-Since iOS 8 SDK, the key **NSLocationAlwaysUsageDescription** is required for the use of localisation in an app.
-
-Open the Info.plist file, then add a new string key *NSLocationAlwaysUsageDescription*. In the value, set the message you want to display to users to request their permission for background localisation updates :
+Open your Info.plist file, then add a new string key *NSLocationAlwaysUsageDescription*. In the value, set the message you want to display to users to request their permission for background localisation updates :
 
     <key>NSLocationAlwaysUsageDescription</key>
     <string>Your message goes here</string>
 
-And since iOS 9 SDK, you need to describe your app’s intended HTTP connection behavior, including for Sweepin servers.
+For devices running iOS 9.0+, you need to describe your app’s intended HTTP connection behavior, including for Sweepin servers, by adding the **NSAppTransportSecurity** key
 
-Since our SDK can integrate webviews that are pointing to other servers than ours, every http loads should be authorized.
+Since our SDK can integrate webviews that are pointing to other servers than ours, every http loads should be authorized. You do this by setting the **NSAllowsArbitraryLoads** key to true.
 
 	<key>NSAppTransportSecurity</key>
 	<dict>
@@ -115,63 +67,87 @@ Since our SDK can integrate webviews that are pointing to other servers than our
 	</dict>
 	
 
+#Usage
 
-<br/>
-# Usage
+You are now two steps away from receiving your first campaign in your app. But before it, a quick explanation on the heart of our SDK. Let me introduce you :
+###The [SCSDKProximityService sharedInstance]
 
-You're now two steps away from receiving your first animation in your app. But before it, a quick explanation on the heart of our SDK. Let me introduce you :
-### The PRX Singleton
-___
 The SweepinConnect SDK provides a unique singleton to access all methods. 
+To use it, you just need to import the SDK into your controller:
 
-You just need to import the PRX.h header file :
+	@import SCSDKProximityServiceKit;
 
-    #import <ProximitiesSDK/PRX.h>
+Then you can call it: 
 
-And then you can call the singleton: 
-
-    [[PRX singleton] anySDKMethod]
+    [[SCSDKProximityService sharedInstance] anyMethod]
 
 
-### 1/ Initialize the SDK
-___
+###1/ Initialize the SDK
 
-To authenticate within our API, use the PRX singleton with the *initWithAppId:andSecret:* method in your AppDelegate's *didFinishLaunchingWithOptions* method: 
 
-    [[PRX singleton] initWithAppId:@"YOUR-APP-ID" andSecret:@"YOUR-APP-SECRET"];
+To authenticate within our API, use the SDK's singleton with the *initWithAppId:andSecret:* method in your AppDelegate's *didFinishLaunchingWithOptions* method: 
+
+    [[SCSDKProximityService sharedInstance] initWithAppId:@"YOUR-APP-ID" andSecret:@"YOUR-APP-SECRET"];
 
 *If you do not have your app id and secret -provided by the Sweepin registration process- please contact the [Sweepin team][1].*
     
-##### /!\ Be careful to keep your app secret for yourself.
-<br/>
+#####/!\ Be careful to keep your app secret for yourself.
 
-### 2/ Suscribe to local notifications and animation display
-___
+###2/ Suscribe to local notifications and campaign display
+
 
 You just need to call *manageLocalNotificationForUserInfo:* on your AppDelegate's *didReceiveLocalNotification:* method.
 
-    - (void)application:(UIApplication *)application didReceiveLocalNotification:( UILocalNotification *)notification{
-    	[[PRX singleton] manageLocalNotificationForUserInfo:notification.userInfo];
-    }
+	- (void)application:(UIApplication *)application didReceiveLocalNotification:(UILocalNotification *)notification{
+	    [[SCSDKProximityService sharedInstance]manageLocalNotificationWithUserInfo:notification.userInfo];
+	}
 
-### Congratulations, your app is now ready to go ! 
-##### Go to <a href='http://manager.sweepin.fr/admin/login/?ref=/'>The Sweepin Manager interface</a> to create your first animation !
+###3/ Start the services
 
-### For more options, see [SweepinConnect iOS : Advanced configuration](SweepinConnect-iOS_Advanced-configuration.md)
+Now it's time to start all the services. Just call:
+
+	[[SCSDKProximityService sharedInstance]start];
+
+###Congratulations, your app is now ready to go ! 
+#####Go to <a href='https://connect.sweepin.fr/admin/login'>the Sweepin Connect interface</a> to create your first campaign !
+
+###For more options, see [SweepinConnect iOS : Advanced configuration](SweepinConnect-iOS_Advanced-configuration.md)
 *A bunch of methods are available to customize our SDK to fit your needs :*
 
-- *Show campaigns/animations in UITableView / UICollectionView*
-- *Create custom actions on reception* 
-- *Integrate a QRCode reader in your app*
-- *Register your users' properties to send segmented animations on specific groups*
+- *Get the latest campaigns received*
+- *Create custom actions on reception / display /close*
+- *Integrate a QRCode reader in your app and call our API to get related campaigns*
+- *Register your users' properties to send segmented campaigns to specific groups*
 - *...and lot more !*
 
 
 <br/>	
-
 ## License
-___
 
 SweepinConnect is available under the MIT license. See the LICENSE file for more info.
 
   [1]: http://www.sweepin.fr/contact
+
+
+<!--
+The Sweepin platform currently lets you choose from 6 types of animations: 
+
+1) Simple: simple notification that will be triggered when detecting the associated beacon, and will simply open the app. You can then handle what to do, like deep linking the push (ex: open a specific view controller)
+
+2) Rich: notification that opens the app and displays a rich animation (custom images, colors, texts in the web manager). 
+
+3) Webview : A notification that opens the app and displays an UIWebview object loading the url you choose inside an UIViewController.
+
+4) Audio : notification that opens the app and displays an audio animation (containing an image in background, an audio file and texts in the web manager). 
+
+5) Video : notification that opens the app and displays a video animation, containing a video file and texts in the web manager.
+
+6) Loyalty : notification that opens the app and displays a loyalty animation. On each connection with the related transmitter, the loyalty template receive one more stamp.
+
+All these animations include a custom delegate to handle user interactions.
+-->
+
+<!--## Example project
+
+To run the example project, clone the repo, and run `pod install` from the Example directory first.
+-->

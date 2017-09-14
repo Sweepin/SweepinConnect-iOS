@@ -214,12 +214,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 6003F5BF195388D20070C39A /* Build configuration list for PBXNativeTarget "SweepinConnect_Example" */;
 			buildPhases = (
-				2A42AFF54C6C1A1B9E436679 /* 📦 Check Pods Manifest.lock */,
+				2A42AFF54C6C1A1B9E436679 /* [CP] Check Pods Manifest.lock */,
 				6003F586195388D20070C39A /* Sources */,
 				6003F587195388D20070C39A /* Frameworks */,
 				6003F588195388D20070C39A /* Resources */,
-				CB732EAEFA2100DC40B47E73 /* 📦 Embed Pods Frameworks */,
-				F91AA501C179B4CA9C4BB26E /* 📦 Copy Pods Resources */,
+				CB732EAEFA2100DC40B47E73 /* [CP] Embed Pods Frameworks */,
+				F91AA501C179B4CA9C4BB26E /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -234,12 +234,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 6003F5C2195388D20070C39A /* Build configuration list for PBXNativeTarget "SweepinConnect_Tests" */;
 			buildPhases = (
-				59C93C7A5EC7FF0E0429800C /* 📦 Check Pods Manifest.lock */,
+				59C93C7A5EC7FF0E0429800C /* [CP] Check Pods Manifest.lock */,
 				6003F5AA195388D20070C39A /* Sources */,
 				6003F5AB195388D20070C39A /* Frameworks */,
 				6003F5AC195388D20070C39A /* Resources */,
-				A61684D1993DEED910E403A0 /* 📦 Embed Pods Frameworks */,
-				056A6690EF0C9FC5391C8463 /* 📦 Copy Pods Resources */,
+				A61684D1993DEED910E403A0 /* [CP] Embed Pods Frameworks */,
+				056A6690EF0C9FC5391C8463 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -318,14 +318,14 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		056A6690EF0C9FC5391C8463 /* 📦 Copy Pods Resources */ = {
+		056A6690EF0C9FC5391C8463 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "📦 Copy Pods Resources";
+			name = "[CP] Copy Pods Resources";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -333,44 +333,44 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SweepinConnect_Tests/Pods-SweepinConnect_Tests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		2A42AFF54C6C1A1B9E436679 /* 📦 Check Pods Manifest.lock */ = {
+		2A42AFF54C6C1A1B9E436679 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "📦 Check Pods Manifest.lock";
+			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
-		59C93C7A5EC7FF0E0429800C /* 📦 Check Pods Manifest.lock */ = {
+		59C93C7A5EC7FF0E0429800C /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "📦 Check Pods Manifest.lock";
+			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
-		A61684D1993DEED910E403A0 /* 📦 Embed Pods Frameworks */ = {
+		A61684D1993DEED910E403A0 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "📦 Embed Pods Frameworks";
+			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -378,14 +378,14 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SweepinConnect_Tests/Pods-SweepinConnect_Tests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		CB732EAEFA2100DC40B47E73 /* 📦 Embed Pods Frameworks */ = {
+		CB732EAEFA2100DC40B47E73 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "📦 Embed Pods Frameworks";
+			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -393,14 +393,14 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SweepinConnect_Example/Pods-SweepinConnect_Example-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		F91AA501C179B4CA9C4BB26E /* 📦 Copy Pods Resources */ = {
+		F91AA501C179B4CA9C4BB26E /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "📦 Copy Pods Resources";
+			name = "[CP] Copy Pods Resources";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -537,6 +537,7 @@
 			baseConfigurationReference = D911219FB7F887DCDCE337A6 /* Pods-SweepinConnect_Example.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ENABLE_BITCODE = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "SweepinConnect/SweepinConnect-Prefix.pch";
 				INFOPLIST_FILE = "SweepinConnect/SweepinConnect-Info.plist";
@@ -552,6 +553,7 @@
 			baseConfigurationReference = 22E911DD3B3CCEFC37B83412 /* Pods-SweepinConnect_Example.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ENABLE_BITCODE = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "SweepinConnect/SweepinConnect-Prefix.pch";
 				INFOPLIST_FILE = "SweepinConnect/SweepinConnect-Info.plist";

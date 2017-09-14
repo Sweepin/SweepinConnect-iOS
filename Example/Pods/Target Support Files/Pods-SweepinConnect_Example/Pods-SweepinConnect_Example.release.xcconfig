@@ -1,9 +1,9 @@
-FRAMEWORK_SEARCH_PATHS = $(inherited) "${PODS_ROOT}/../../SweepinConnect"
+FRAMEWORK_SEARCH_PATHS = $(inherited) "$PODS_CONFIGURATION_BUILD_DIR/Realm" "${PODS_ROOT}/../../SCSDKCoreKit" "${PODS_ROOT}/../../SCSDKProximityServiceKit"
 GCC_PREPROCESSOR_DEFINITIONS = $(inherited) COCOAPODS=1
-HEADER_SEARCH_PATHS = $(inherited) "${PODS_ROOT}/Headers/Public" "${PODS_ROOT}/Headers/Public/SweepinConnect"
+HEADER_SEARCH_PATHS = $(inherited) "${PODS_ROOT}/Headers/Public" "${PODS_ROOT}/Headers/Public/SCSDKCoreKit" "${PODS_ROOT}/Headers/Public/SCSDKProximityServiceKit"
 LD_RUNPATH_SEARCH_PATHS = $(inherited) '@executable_path/Frameworks' '@loader_path/Frameworks'
-OTHER_CFLAGS = $(inherited)  -isystem "${PODS_ROOT}/Headers/Public" -isystem "${PODS_ROOT}/Headers/Public/SweepinConnect"
-OTHER_LDFLAGS = $(inherited) -ObjC -l"sqlite3.0" -framework "AVFoundation" -framework "AVKit" -framework "CoreBluetooth" -framework "CoreLocation" -framework "CoreMedia" -framework "Foundation" -framework "ProximitiesSDK" -framework "SystemConfiguration" -framework "UIKit"
+OTHER_CFLAGS = $(inherited) -iquote "$PODS_CONFIGURATION_BUILD_DIR/Realm/Realm.framework/Headers" -isystem "${PODS_ROOT}/Headers/Public" -isystem "${PODS_ROOT}/Headers/Public/SCSDKCoreKit" -isystem "${PODS_ROOT}/Headers/Public/SCSDKProximityServiceKit"
+OTHER_LDFLAGS = $(inherited) -ObjC -framework "Realm" -framework "SCSDKCoreKit" -framework "SCSDKProximityServiceKit"
 PODS_BUILD_DIR = $BUILD_DIR
 PODS_CONFIGURATION_BUILD_DIR = $PODS_BUILD_DIR/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)
 PODS_ROOT = ${SRCROOT}/Pods

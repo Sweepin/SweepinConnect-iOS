@@ -1,203 +1,126 @@
 <p align="center" >
-  <img src="Images/logoSweepinConnect-850x300.png" alt="SweepinConnectLogo" title="SweepinConnectLogo">
+  <img src="http://connect.sweepin.net/img/logo/sweepin-connect-850x300.png" alt="SweepinConnectLogo" title="SweepinConnectLogo">
 </p>
 
+#SweepinConnect-iOS : Advanced configuration
+##Table of contents
 
-# SweepinConnect-iOS : Advanced configuration
-## Table of contents
-
-- [SweepinConnect Example](#example)
-- [Showing user's received campaigns/animations](#showAnim)
-     - [Nice preview collectionViewController with curved layout](#showAnimColView)
-     - [Simple preview in UITableView](#showAnimTableView)
-     - [Custom UITableView](#showAnimCustomTableView)
-- [Get the user's archived animations](#getAnim)
-- [Implement PRXQRCodeReader](#qrCodeReader)
-- [The PRXAnimationViewControllerDelegate protocol](#PRXAnimationViewControllerDelegate)
-- [Store user infos for segmented animations](#segUser)
-- [Prevent and restart the display of animations](#preventAnim)
-	- [By user choice](#preventAnimUserChoice)
-	- [In your methods](#preventAnimDeveloperChoice)
-- [Push in app](#pushInApp)
+<!-- - [SweepinConnect Example](#example)-->
+- [The SCSDKProximityServiceDelegate protocol](#PRXAnimationViewControllerDelegate)
+- [Retrieve user's campaigns](#getAnim)
+- [Request campaigns from a QRCode](#qrCodeReader)
+- [Store user information for segmented campaigns](#segUser)
+- [Prevent and restart the display of campaigns](#preventCampaign)
 - [General options](#generalOptions)
 	- [Location manager distance filter](#generalOptionsDistanceFilter)
 	- [Confirmation messages ](#generalOptionsLocalizable)
-	- [Manage in-app urls from animations](#generalOptionsInAppUrl)
-	- [Custom right bar button in animations](#generalOptionsRightBarButton)
-	- [Application Icon Badge](#generalOptionsAppIcon)
+	- [Display Manager](#displayManager)
+		- [SCSDKProximityServiceCampaignUIDelegate](#campaignUIDelegate)
+		- [SCSDKProximityServiceCampaignToolbarUIDelegate](#campaignToolbarUIDelegate)
 	- [Advertising Identifier](#generalOptionsIDFA)
-<br/><br/>
 
-<div id='example'/>
+<!-- <div id='example'/>
 
-# SweepinConnect Example 
-___
-Because code is always better than explanations, we made an example project to show you how to use the SweepinConnect SDK methods.
+#SweepinConnect Example 
+
+Because code is always more talking than words, we made an example project to show you how to use the SweepinConnect SDK methods.
 
 To run it, clone the repo, and run `pod install` from the Example directory.
-**Important note :** please be aware that the notion of campaign and animation is the same thing. We usually use the word campaign on the back office and the word animations on the SDK.
-<br/><br/>
-<div id='showAnim'/>
+<br/><br/> -->
 
-# Showing user's received campaigns/animations
-___
-Registered and non-registered users that receive campaigns/animations may want to keep them for later. The Sweepin SDK provides a built-in way to show already received campaigns/animations for an user, in a customizable view or raw datas.
-
-The **userAction** parameter allow you to get users favorites (userAction = @"saved") or received (userAction = @"anim_received") campaigns/animations.
-**Important note : ** the userAction @"saved" is now deprecated. Use the @"anim_received" userAction instead.
-
-<div id='showAnimColView'/>
-
-### Nice preview collectionViewController with curved layout
-___
-You can for example add a UIButton somewhere in your app's user interface.
-Here is an example of a possible IBAction: 
-
-    - (IBAction)showFavoritesAction:(id)sender {
-    NSDictionary *dict = @{
-                           @"topbarTitle":@"Mes favoris",
-                           @"topbarTextColor":[UIColor blackColor],
-                           @"tintColor":[UIColor blackColor],
-                           @"textColor":[UIColor brownColor],
-                           @"topbarTintColor":[UIColor whiteColor],
-                           @"emptyCaseTitle" : @"Aucun élément disponible actuellement"
-                           };
-    [[PRX singleton] presentAnimationsCollectionViewControllerWithUIAttributes:dict forUserAction:@"anim_received"];
-    }
-
-
->**Note:**
-This is the complete list of attributes. No need to explain each one of them as they speak for themselves.  
-
-If your app is embedded in a navigation controller, you can also display that list of animations by pushing the favorites view controller :
-
-    [[PRX singleton] pushAnimationsCollectionViewControllerWithUIAttributes:dict fromCurrentViewController:self forUserAction:userAction];
- 
-<div id='showAnimTableView'/>
-
-### Simple preview in UITableView
-___
-Another template to show user's animations use an UITableView.
-You can customize the view. Here is an example how to use this method :
-
-    [[PRX singleton]presentAnimationsTableViewControllerWithUIAttributes:@{
-	    @"noResultsMessage":@"Pas de résultats",
-		@"failToRetrieveMessage":@"Pas de réseau",
-		@"notifTitleColor":@"1a0dab",
-		@"noResultsMessageTitleColor":@"fa99cc",
-		@"failToRetrieveMessageTitleColor":@"b90d75",
-		@"topBarTintColor":@"ffffff",
-		@"topBarBackgroundColor":@"d54586",
-		@"topBarTitle":@"Notifications"
-	forUserAction:@"anim_received"];
-   
-Or if your app is embedded in a navigation controller : 
-
-     [[PRX singleton] pushAnimationsTableViewControllerWithUIAttributes:attributes   
-  		 fromCurrentViewController:(UIViewController *)viewController 
-	     forUserAction:(NSString *)userAction{
-
-<div id='showAnimCustomTableView'/>
-
-### Custom UITableView
-___
-The UIViewController **PRXAnimationsTableViewControllerDelegate** implement all the necessary methods to get user's animations/campaigns and display them into an UITableView.
-By this way, you can create your own UITableView inside your controllers and use it to display the animations.
-Here is an example how to use :
-
-1) Import the header :
-
-	#import <ProximitiesSDK/PRXAnimationsTableViewControllerDelegate.h>
-2) Declare an instance :
-
-	@property (nonatomic, strong) PRXAnimationsTableViewControllerDelegate *prxTableViewDelegate;
-	
-3) Configure your UITableView this way :
-
-	_prxTableViewDelegate = [[PRXAnimationsTableViewControllerDelegate 	alloc]initWithUIAttributes:(NSDictionary *)attributes andUserAction:(NSString *) userAction];
-    [_prxTableViewDelegate setFromVC:self];
-    [_prxTableViewDelegate setTableView:_notifsTableView];
-    
-    [_notifsTableView setDelegate:_prxTableViewDelegate];
-    [_notifsTableView setDataSource:_prxTableViewDelegate];
-
-----------
-
-<div id='getAnim'/>
-
-# Get the user's archived animations/campaigns
-The SDK provide a convenient method to get user's animations/campaigns.
-
-The userAction parameter allow you to get users received (userAction = @"anim_received") animations.
-
-	[[PRX singleton]getAnimationsByUserAction:@"anim_received" withSuccessHandler:^(NSArray *animations) {
-        if ([animations count] == 0) {
-        	// Result is empty 
-        }else{
-        	// Handle success
-        }
-    } andFailureHandler:^(NSError *error) {
-		// Handle error
-    }];
-
-
-This method return a NSArray object with user's animations/campaigns.
-
-<div id='qrCodeReader'/>
-
-# Implement PRXQRCodeReader
-___
-If you want to implement our QR Code solution in your app, simply use :
-
-	-(void)showQrCodeReader{
-	    PRXQrCodeReaderViewController *qrCodeReaderViewController =		[[PRXQrCodeReaderViewController alloc]init];
-	    [qrCodeReaderViewController setNavigationBarBackgroundColor:[UIColor whiteColor]];
-	    [qrCodeReaderViewController setNavigationBarTintColor:[UIColor blackColor]];
-    	[[self navigationController]pushViewController:qrCodeReaderViewController animated:YES];
-
-	}
-
-This controller can display Sweepin's animations, handle web-url and vCards.
-
-**Since iOS 10, you have to add a key in your app's plist, otherwise the app will crash when trying to access the camera : **
-    
-	"NSCameraUsageDescription" = "You need to let the app access your camera in order to scan a QRCode";    
-	
 <div id='PRXAnimationViewControllerDelegate'/>
+#The SCSDKProximityServiceDelegate protocol 
+Our SDK provides a protocol that you can adopt to manage user interactions.
 
-# The PRXAnimationViewControllerDelegate protocol 
-___
-For non-simple notification cases, the SDK provides a delegate that you can adopt to manage user interactions.
-
-Adopt the protocol (in the AppDelegate.h for example): 
+Adopt the protocol (for example in the AppDelegate.h): 
     
-    #import <ProximitiesSDK/PRXAnimationViewControllerDelegate.h>
-    @interface AppDelegate : UIResponder <UIApplicationDelegate,PRXAnimationViewControllerDelegate>
+	@import SCSDKProximityServiceKit;
+    @interface AppDelegate : UIResponder <UIApplicationDelegate, SCSDKProximityServiceDelegate>
 
 Then in your AppDelegate.m: 
 
-    [[PRX singleton] setAnimationViewControllersDelegate:self]
+	[[SCSDKProximityService sharedInstance]setDelegate:self];
 
-Here is the list of delegate methods that you can implement: 
+Here is the list of the methods available: 
 
-	- (BOOL) shouldTapRightButtonWithAnimation:(PRXAnimation*)animation;
-	- (BOOL) shouldTapLeftButtonWithAnimation:(PRXAnimation*)animation;
-	- (void) didTapRightButtonWithAnimation:(PRXAnimation*)animation;
-	- (void) didTapLeftButtonWithAnimation:(PRXAnimation*)animation;
+	-(void)didReceiveCampaigns:(NSArray *)campaigns;
+	-(void)didDisplayCampaign:(SCSDKCampaign *)campaign firstTime:(BOOL)firstTime;
+	-(void)handleActionForCampaignIdentifier:(NSString *)identifier;
+	
+	-(BOOL)shouldTapRightButtonWithCampaigns:(NSArray *)campaigns;
+	-(BOOL)shouldTapLeftButtonWithCampaigns:(NSArray *)campaigns;
+	-(void)didTapRightButtonWithCampaigns:(NSArray *)campaigns;
+	-(void)didTapLeftButtonWithCampaigns:(NSArray *)campaigns;
 
-Theses delegate are triggered the first time an user sees an animation (no delegates when displaying from the favorites view).
+>**Note:** The **identifier** is an alpha-numeric string that you can use to identify a set of campaigns to associate a specific action. Let's say you want to open the fidelity card view controller, and you have 2 campaigns. When you create your campaigns, in the Sweepin Connect back-office, you'll give the same identifier for these two campaigns (ex : 'open-fidelity-vc').
+In your delegate's method implementation, you can now handle a specific action for this set of campaigns.
 
->**Note:** The **identifier** is an alpha-numeric string that you can use to identify a set of animations to associate a specific action. Let's say you want to open the fidelity card view controller, and you have 2 animations. When you create your animations, in the Sweepin administration, you'll give the same identifier for these two animations (ex : 'open-fidelity-vc').
-In your delegate's method implementation, you can now handle a specific action for this set of animations.
+<div id='getAnim'/>
+#Retrieve user's campaigns
+The SDK provide a convenient method to get user's campaigns.
+
+The userAction parameter allow you to get campaigns sorted by user actions.
+The available values are :
+
+	kUserActionReceived
+	kUserActionReceivedBackground
+	kUserActionReceivedForeground
+	kUserActionSaved
+
+Example : 
+
+	[[SCSDKProximityService sharedInstance]getCampaignsByUserAction:kUserActionReceived withSuccessHandler:^(id object) {
+		
+    } andFailureHandler:^(NSError *error) {
+		
+    }];
+
+The object parameter in the successHandler contains an array with user's campaigns.
+
+<div id='qrCodeReader'/>
+#Request campaigns from a QRCode
+
+We made a ViewController implementing a QRCode reader available in our SDK.
+
+First, import the SCSDKQrCodeReaderViewController:
+
+	#import <SCSDKProximityServiceKit/SCSDKQrCodeReaderViewController.h>
+
+Then create and push it :
+
+	SCSDKQrCodeReaderViewController *qrCodeReaderVC = [[SCSDKQrCodeReaderViewController alloc]init];
+	    
+	qrCodeReaderVC.navigationBarBackgroundColor = [UIColor whiteColor];
+	qrCodeReaderVC.navigationBarTintColor = [UIColor blueColor];
+	    
+	[self.navigationController pushViewController:qrCodeReaderVC animated:YES];
+	    
+*Note: This controller also handle vcards reading.*
+
+If you want to implement your custom QR Code solution in your app, it's also possible.
+In the *captureOutput:didOutputMetadataObjects:fromConnection:* method, you can check if our SDK is able to handle the information contained in the scanned QRCode, then send the data to it : 
+
+	-(void)captureOutput:(AVCaptureOutput *)captureOutput didOutputMetadataObjects:(NSArray *)metadataObjects fromConnection:(AVCaptureConnection *)connection{
+	    if (metadataObjects != nil && [metadataObjects count] > 0) {
+	        if([[SCSDKProximityService sharedInstance]canManageMetadataObjects:metadataObjects]){
+	            [[SCSDKProximityService sharedInstance]manageMetadataObjects:metadataObjects withSuccessHandler:^(id object) {
+	                dispatch_async(dispatch_get_main_queue(), ^{
+	                    [self.navigationController popViewControllerAnimated:YES];
+	                });
+	            } andFailureHandler:^(NSError *error) {
+	                
+	            }];
+	        }
+	    }
+	}
 
 <div id='segUser'/>
-
-# Store user infos for segmented animations
-___
+#Store user information for segmented campaigns
 At one point, your app's customer is going to login (or auto-login) to your app.
-If you want the Sweepin system to be aware of your users informations, you'll need to register this user to the Sweepin system. 
-For example, you can call the *registerIdentifier:withUserInfos:* method on your login/autologin routine method to.
-Registering users is the way to send segmented animations on a specific group of users.
+If you want the Sweepin Connect system to be aware of your users informations, you'll need to register this user to the Sweepin system. 
+To achieve this, you can call the *registerIdentifier: withUserInfos:withSuccessHandler:andFailureHandler:* method on your login/autologin routine method.
+
+Registering users is the way to send segmented campaigns to a specific group of users.
 
     NSDictionary* myDict = @{ @"parameters" : @{
                            		       @"age" : @"19",
@@ -205,199 +128,154 @@ Registering users is the way to send segmented animations on a specific group of
                                        ...
                                 };
                                  
-    [[PRX singleton]registerIdentifier:@"myUniqueIdentifier" withUserInfos:myDict withSuccessHandler:^(id object) {
+    [[SCSDKApplicationDelegate sharedInstance]registerIdentifier:@"myUniqueIdentifier" withUserInfos:myDict withSuccessHandler:^(id object) {
         
     } andFailureHandler:^(NSError *error) {
         
     }];
 
 
-<div id='preventAnim'/>
-
-# Prevent and restart the display of animations
-___
-<div id='preventAnimDeveloperChoice'/>
-
-### In your methods
-___
+<div id='preventCampaign'/>
+#Prevent and restart the display of campaigns
 In some cases, you'll want to prevent the display of animations. 
 For example, if the user is on the payment view of your app, you don't want any other screen to interfere while the user is in the payment process.
 
-To prevent the display, use:
+    [[SCSDKProximityService sharedInstance]setPreventCampaignDisplay:(BOOL)];
 
-    - (void)stopAnimationsDisplay;
-
-To restart the display after, use:
-    
-    - (void)restartAnimationsDisplay;
-
-
-<div id='preventAnimUserChoice'/>
-
-### By user choice
-___
-You can also give to your users the possibility to prevent all animations to be displayed. Here is an example of a possible IBAction: 
-
-    - (IBAction)switchAction:(id)sender {
-	    if([sender isOn]){
-	        [[PRX singleton]preventAnimations:YES];
-	    } else{
-        	[[PRX singleton]preventAnimations:NO];
-    	}
-	}
-
-
-
-
-<div id='pushInApp'/>
-
-# Push in app
-___
- To manage the case of a simple notification with push in app, you have to declare a block and call *setSimpleNotificationActionBlock:* on your AppDelegate's *willFinishLaunchingWithOptions:* method.
-
-    void(^simpleNotificationCallback)() = ^(NSString* identifier) {
-        if ( [identifier isEqualToString:@"open-specific-vc"] ){
-            // Manage the opening of a specific view controller here
-        }
-        // Multiple parameters example: open product controller with product id
-        // Ex identifier: controller=ProductViewController&id=10
-        NSDictionary * params = [[PRX singleton] parametersFromQueryString:identifier];
-        if ( [params valueForKey:@"controller"] && NSClassFromString([params valueForKey:@"controller"]) ){
-            
-            UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-            id viewController = [storyboard instantiateViewControllerWithIdentifier:[params valueForKey:@"controller"]];
-            [self.window.rootViewController presentViewController:viewController animated:YES completion:nil];
-        }
-    };
-    
-    [[PRX singleton]setSimpleNotificationActionBlock:simpleNotificationCallback];
-    
-When the app is running, simple notifications will appear in a pop-up view. You can personalize this view by calling *setSimpleAnimationPopupProperties:* 
-
-    NSDictionary *popupProperties = @{
-                                      @"popupTextColor":[UIColor cyanColor],
-                                      @"popupColor":[UIColor purpleColor]
-                                      };
-    [[PRX singleton]setSimpleAnimationPopupProperties:popupProperties];
-
-
->**Note:** The *simpleNotificationActionBlock* is executed in the main thread.
 
 <div id='generalOptions'/>
-
-# General options
-___
+#General options
 
 <div id='generalOptionsDistanceFilter'/>
+###Location manager distance filter
 
-### Location manager distance filter
-___
-The location manager distance filter for geofencing animations.
-    
-    [[PRX singleton] setLocationManagerDistanceFilter:10];
+The minimum distance (measured in meters) a device must move horizontally before an update event is generated.
 
-----------
+The default value of this property is 10    
+
+	[[SCSDKProximityService sharedInstance]setDistanceFilter:(CGFloat)];
 
 <div id='generalOptionsLocalizable'/>
+###Confirmation messages 
 
-### Confirmation messages 
-___
-You can set messages to display alerts relative to the SDK. The keys/strings values can be set in the Localizable.strings files of ProximitiesSDK.bundle.
+You can set messages to display alerts relative to the SDK. The keys/strings values can be set in the Localizable.strings files of SCSDKResourcesForProximityServiceKit.bundle.
 Here is a complete list of all the configurable parameters:
 
-----------
+####SCSDKQrCodeReaderViewController
+	"qrcode_reader-navigation_bar_title"
+	"qrcode_reader-camera_disabled_alert_title"
+	"qrcode_reader-camera_disabled_alert_message"
+	"qrcode_reader-camera_disabled_alert_option_title_cancel"
+	"qrcode_reader-camera_disabled_alert_option_title_settings"
+	"qrcode_reader-vcard_add_contact_successful"
 
->- Alert when your user delete an animation from its favorites:
- 	- "prx.delete-favorite-alert-title" 
- 	- "prx.delete-favorite-alert-message"
->- Alert on first launch, to inform the user that its bluetooth is disabled:
- 	- "prx.bluetooth-disabled-alert-title"
- 	- "prx.bluetooth-disabled-alert-message"
->- Alert when your user dismiss the multi-animations list:
- 	- "prx-multi-animations-list.close-alert-title"
- 	- "prx-multi-animations-list.close-alert-message"
->- Message shown in favorites' view if user's animations' list is empty:
- 	- "prx-favorites-list.empty-case-title"
->- Favorites view title:
- 	- "prx-favorites-list.topbar-title" 
- 	
->- On loyalty-type animation, when the user unlocked all stamps, a message is shown above the animation, to invite him to present the animation to the related POI manager, and to reset the stamps.
- 	- "prx-loyalty-animation-full-stamp.label-title"
->- On loyalty-type animation, when the user choose to reset its stamps, an UIAlertController / UIAlertView is shown, to notify him that this action can’t be undone. If the first two keys are empty, no alert is displayed.
- 	- "prx-loyalty-animation-full-stamp-confirm-reset.alert-title"
- 	- "prx-loyalty-animation-full-stamp-confirm-reset.alert-message"
-	- "prx-loyalty-animation-full-stamp.agree-button-title"
-	-"prx-loyalty-animation-full-stamp.disagree-button-title"
->- On loyalty-type animation, when user reset its stamps and if the value isn't empty, a PRXAlertView is shown to confirm the action.
-	- "prx-loyalty-animation-full-stamp.reset-done"
->- A trad key used in the SDK when a webservice call failed. If empty, no PRXAlertView shows.
- 	- "prx-no-network.prx-alert-title"
+####SCSDKMultipleCampaignsTableViewController
+	"multi_campaign-view-controller-title"
+	"multi_campaign-close_action_alert_title"
+	"multi_campaign-close_action_alert_message"
+	"multi_campaign-close_action_alert_title"
+	"multi_campaign-close_action_alert_message"
+	"multi_campaign-close_action_alert_option_title_validate"
+	"multi_campaign-close_action_alert_option_title_cancel"
 
+CHECK IF SET ON:
+"multi_campaign-close_action_alert_title"
+"multi_campaign-close_action_alert_message"
+####Bluetooth
+	"bluetooth_error-disabled_from_app_alert_title"
+	"bluetooth_error-disabled_from_app_alert_message"
+	"bluetooth_error-disabled_from_app_alert_option_title_cancel"
+	"bluetooth_error-disabled_from_app_alert_option_title_validate"
 
+####Notifications
+	"notification-multi_campaign_title"
+	
+####Simple notification in app
+	"notification_in_app-agree-action"
+	"notification_in_app-disagree-action"
 
+####Loyalty campaign
+	"loyalty_campaign-full_stamp_view_reset_label_title"
+	"loyalty_campaign-full_stamp_view_reset_sublabel_title"
+	"loyalty_campaign-full_stamp_view_reset_option_title_cancel"
+	"loyalty_campaign-full_stamp_view_reset_option_title_validate"
+	"loyalty_campaign-full_stamp_view_confirm_alert_title"
+	"loyalty_campaign-full_stamp_view_confirm_alert_message"
+	"loyalty_campaign-full_stamp_view_reset_done_title"
 
->**Notes**
-If you don't specify a title, the corresponding alert won't show.
-The last two keys will not be used if you call *presentFavoritesListViewControllerWithUIAttributes:* or *pushFavoritesListViewControllerWithUIAttributes:* methods.
+<div id='displayManager'/>
+### Display Manager
+You can customize some parameters of our campaigns directly from your app. We created 2 protocols for this :
 
-<div id='generalOptionsInAppUrl'/>
+<div id='campaignUIDelegate'/>
+###SCSDKProximityServiceCampaignUIDelegate
+The CampaignTopbarUIDelegate allow you to customize the rightBarButtonItems parameter using the *getRightBarButtonItemsForCampaign:* method. 
 
-### Manage in-app urls from animations
-___
+Adopt the protocol (for example in the AppDelegate.h):
 
-Animations can contain html code, which can lead to a deep link into your app. Our SDK manage the link opening and provides you the ability to add your rules. 
-Let's say the user press a html button in an animation, the method *webView:(UIWebView \*)inWeb shouldStartLoadWithRequest:(NSURLRequest \*)* gets called. 
-You can define a block in your AppDelegate's *didFinishLaunchingWithOptions:* method, which will be executed. For example, you can test url's scheme and do the right action according to the case.
+	@import SCSDKProximityServiceKit;
+	@interface AppDelegate : UIResponder <UIApplicationDelegate, SCSDKProximityServiceCampaignUIDelegate>
 
+Then in your AppDelegate.m:
 
-    BOOL (^customUrlManagementBlock)(NSURL*, UIViewController*);
-    customUrlManagementBlock = ^BOOL (NSURL* url, UIViewController* vc){
-        if ([[url scheme] isEqualToString:@"customUrlScheme"]) {
-            UIViewController *customViewController = [[UIViewController alloc]init];
-            [vc presentViewController:customViewController animated:YES completion:^{
-                
-            }];
-            // Return no because we manage this case
-            return NO;
-        }
-        // Return yes because we do not manage this case
-        return YES;
-    };
-    
-    [[PRX singleton]setCustomUrlManagementBlock:customUrlManagementBlock];
+	[[SCSDKProximityService sharedInstance]setCampaignsTopbarUIDelegate:self];
+	
+This method has to return a NSArray of UIBarButtonItems. The implementation is the same as setting the rightBarButtonItems in one or your UINavigationItem.
 
-<div id='generalOptionsRightBarButton'/>
+Example : 
+	
+	-(NSArray *)getRightBarButtonItemsForCampaign:(SCSDKCampaign *)campaign{
+	    NSArray *barButtonItems = @[
+	                                [[UIBarButtonItem alloc]initWithTitle:@"First" style:UIBarButtonItemStyleDone target:self action:@selector(didTapFirstCustomBarButtonItem:)],
+	                                [[UIBarButtonItem alloc]initWithTitle:@"Second" style:UIBarButtonItemStyleDone target:self action:@selector(didTapSecondCustomBarButtonItem:)],
+	                                ];
+	    
+	    return barButtonItems;
+	}
+	
+<div id='campaignToolbarUIDelegate'/>
+###SCSDKProximityServiceCampaignToolbarUIDelegate
+We put an UIToolbar at the bottom of the rich template-type view controller.
+We commonly use it to display share buttons allowing you users to share the campaign's content to their Facebook / Twitter account.
 
-### Custom right bar button in animations
-___
-The heart icon and all associated actions are fully configurable. You can create your own *UIBarButtonItem* in your AppDelegate's *didFinishLaunchingWithOptions:* method.
+You can configure this UIToolbar by adopting the protocol (for example in the AppDelegate.h):
 
-    UIBarButtonItem *customBarButtonItem = [[UIBarButtonItem alloc]initWithImage:[UIImage imageNamed:@"customImage"] style:UIBarButtonItemStylePlain target:self action:@selector(customAction:)];
-    [[PRX singleton]setAnimationsCustomRightBarButtonItem:customBarButtonItem];
+	@import SCSDKProximityServiceKit;
+	@interface AppDelegate : UIResponder <UIApplicationDelegate, SCSDKProximityServiceCampaignUIDelegate>
 
-<div id='generalOptionsAppIcon'/>
+Then in your AppDelegate.m:
 
-### Application Icon Badge
-___
-Our SDK show by default an appIcon badge when it receive a notification. If you need to disable this option, you can set a boolean after your *initWithAppId:* method.
+	[[SCSDKProximityService sharedInstance]setCampaignsToolbarUIDelegate:self];
+ 
+The CampaignToolbarUIDelegate allow you to customize the rightBarButtonItems parameter using the *getToolbarItemsForCampaign:* method. 
 
-    [[PRX singleton]setShowIconBadgeNumber:NO];
+Adopt the protocol (for example in the AppDelegate.h):
 
+	
+This method has to return a NSArray of UIBarButtonItems. The implementation is the same as setting the items in one or your UIToolbar.
 
+Example : 
+	
+	-(NSArray *)getToolbarItemsForCampaign:(SCSDKCampaign *)campaign{
+	    NSArray *barButtonItems = @[
+	                                [[UIBarButtonItem alloc]initWithTitle:@"Facebook" style:UIBarButtonItemStyleDone target:self action:@selector(didTapFacebookShareButton:)],
+	                                [[UIBarButtonItem alloc]initWithTitle:@"Twitter" style:UIBarButtonItemStyleDone target:self action:@selector(didTapTwitterShareButton:)],
+	                                ];
+	    
+	    return barButtonItems;
+	}
 
 <div id='generalOptionsIDFA'/>
-
-### Advertising Identifier
-___
+###Advertising Identifier
 
 If your app use IDFA, you can enable our SDK to use it. It will act like an anonymous identifier in our database.
 
 To use it, just add in your AppDelegate's *didFinishLaunchingWithOptions* method: 
 
-	[[PRX singleton]setEnableAdvertisingIdentifier:YES];
+	[[SCSDKProximityService sharedInstance]setUseASIdentifier:YES];
 
+**Be careful when adding this capability as Apple will reject your app if you do not include ad functionality**
 
 ## License
-___
 
 SweepinConnect is available under the MIT license. See the LICENSE file for more info.
