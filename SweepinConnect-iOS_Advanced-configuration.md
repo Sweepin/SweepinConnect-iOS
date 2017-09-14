@@ -2,8 +2,8 @@
   <img src="http://connect.sweepin.net/img/logo/sweepin-connect-850x300.png" alt="SweepinConnectLogo" title="SweepinConnectLogo">
 </p>
 
-#SweepinConnect-iOS : Advanced configuration
-##Table of contents
+# SweepinConnect-iOS : Advanced configuration
+## Table of contents
 
 <!-- - [SweepinConnect Example](#example)-->
 - [The SCSDKProximityServiceDelegate protocol](#PRXAnimationViewControllerDelegate)
@@ -29,7 +29,7 @@ To run it, clone the repo, and run `pod install` from the Example directory.
 <br/><br/> -->
 
 <div id='PRXAnimationViewControllerDelegate'/>
-#The SCSDKProximityServiceDelegate protocol 
+# The SCSDKProximityServiceDelegate protocol 
 Our SDK provides a protocol that you can adopt to manage user interactions.
 
 Adopt the protocol (for example in the AppDelegate.h): 
@@ -56,7 +56,7 @@ Here is the list of the methods available:
 In your delegate's method implementation, you can now handle a specific action for this set of campaigns.
 
 <div id='getAnim'/>
-#Retrieve user's campaigns
+# Retrieve user's campaigns
 The SDK provide a convenient method to get user's campaigns.
 
 The userAction parameter allow you to get campaigns sorted by user actions.
@@ -78,7 +78,7 @@ Example :
 The object parameter in the successHandler contains an array with user's campaigns.
 
 <div id='qrCodeReader'/>
-#Request campaigns from a QRCode
+# Request campaigns from a QRCode
 
 We made a ViewController implementing a QRCode reader available in our SDK.
 
@@ -115,7 +115,7 @@ In the *captureOutput:didOutputMetadataObjects:fromConnection:* method, you can 
 	}
 
 <div id='segUser'/>
-#Store user information for segmented campaigns
+# Store user information for segmented campaigns
 At one point, your app's customer is going to login (or auto-login) to your app.
 If you want the Sweepin Connect system to be aware of your users informations, you'll need to register this user to the Sweepin system. 
 To achieve this, you can call the *registerIdentifier: withUserInfos:withSuccessHandler:andFailureHandler:* method on your login/autologin routine method.
@@ -136,7 +136,7 @@ Registering users is the way to send segmented campaigns to a specific group of 
 
 
 <div id='preventCampaign'/>
-#Prevent and restart the display of campaigns
+# Prevent and restart the display of campaigns
 In some cases, you'll want to prevent the display of animations. 
 For example, if the user is on the payment view of your app, you don't want any other screen to interfere while the user is in the payment process.
 
@@ -144,10 +144,10 @@ For example, if the user is on the payment view of your app, you don't want any 
 
 
 <div id='generalOptions'/>
-#General options
+# General options
 
 <div id='generalOptionsDistanceFilter'/>
-###Location manager distance filter
+### Location manager distance filter
 
 The minimum distance (measured in meters) a device must move horizontally before an update event is generated.
 
@@ -156,12 +156,12 @@ The default value of this property is 10
 	[[SCSDKProximityService sharedInstance]setDistanceFilter:(CGFloat)];
 
 <div id='generalOptionsLocalizable'/>
-###Confirmation messages 
+### Confirmation messages 
 
 You can set messages to display alerts relative to the SDK. The keys/strings values can be set in the Localizable.strings files of SCSDKResourcesForProximityServiceKit.bundle.
 Here is a complete list of all the configurable parameters:
 
-####SCSDKQrCodeReaderViewController
+#### SCSDKQrCodeReaderViewController
 	"qrcode_reader-navigation_bar_title"
 	"qrcode_reader-camera_disabled_alert_title"
 	"qrcode_reader-camera_disabled_alert_message"
@@ -169,7 +169,7 @@ Here is a complete list of all the configurable parameters:
 	"qrcode_reader-camera_disabled_alert_option_title_settings"
 	"qrcode_reader-vcard_add_contact_successful"
 
-####SCSDKMultipleCampaignsTableViewController
+#### SCSDKMultipleCampaignsTableViewController
 	"multi_campaign-view-controller-title"
 	"multi_campaign-close_action_alert_title"
 	"multi_campaign-close_action_alert_message"
@@ -181,20 +181,20 @@ Here is a complete list of all the configurable parameters:
 CHECK IF SET ON:
 "multi_campaign-close_action_alert_title"
 "multi_campaign-close_action_alert_message"
-####Bluetooth
+#### Bluetooth
 	"bluetooth_error-disabled_from_app_alert_title"
 	"bluetooth_error-disabled_from_app_alert_message"
 	"bluetooth_error-disabled_from_app_alert_option_title_cancel"
 	"bluetooth_error-disabled_from_app_alert_option_title_validate"
 
-####Notifications
+#### Notifications
 	"notification-multi_campaign_title"
 	
-####Simple notification in app
+#### Simple notification in app
 	"notification_in_app-agree-action"
 	"notification_in_app-disagree-action"
 
-####Loyalty campaign
+#### Loyalty campaign
 	"loyalty_campaign-full_stamp_view_reset_label_title"
 	"loyalty_campaign-full_stamp_view_reset_sublabel_title"
 	"loyalty_campaign-full_stamp_view_reset_option_title_cancel"
@@ -208,7 +208,7 @@ CHECK IF SET ON:
 You can customize some parameters of our campaigns directly from your app. We created 2 protocols for this :
 
 <div id='campaignUIDelegate'/>
-###SCSDKProximityServiceCampaignUIDelegate
+### SCSDKProximityServiceCampaignUIDelegate
 The CampaignTopbarUIDelegate allow you to customize the rightBarButtonItems parameter using the *getRightBarButtonItemsForCampaign:* method. 
 
 Adopt the protocol (for example in the AppDelegate.h):
@@ -234,7 +234,7 @@ Example :
 	}
 	
 <div id='campaignToolbarUIDelegate'/>
-###SCSDKProximityServiceCampaignToolbarUIDelegate
+### SCSDKProximityServiceCampaignToolbarUIDelegate
 We put an UIToolbar at the bottom of the rich template-type view controller.
 We commonly use it to display share buttons allowing you users to share the campaign's content to their Facebook / Twitter account.
 
@@ -266,7 +266,7 @@ Example :
 	}
 
 <div id='generalOptionsIDFA'/>
-###Advertising Identifier
+### Advertising Identifier
 
 If your app use IDFA, you can enable our SDK to use it. It will act like an anonymous identifier in our database.
 

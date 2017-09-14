@@ -11,12 +11,6 @@ Pod::Spec.new do |s|
   s.version          = "2.0.0"
   s.summary          = "SweepinConnect Proximity Service solutions package"
 
-# This description is used to generate tags and improve search results.
-#   * Think: What does it do? Why did you write it? What is the focus?
-#   * Try to keep it short, snappy and to the point.
-#   * Write the description between the DESC delimiters below.
-#   * Finally, don't worry about the indent, CocoaPods strips it!
-
   s.description      = <<-DESC
 Sweepin manager let you create your campaigns online in no time and broadcast to your audience.
 Watch the analytics data on our charts, and get the visitor's traffic in real time.
@@ -27,10 +21,10 @@ Automate the campaign creation process : use our API to connect your existing ba
 
                        DESC
 
-  s.homepage         = "https://github.com/Sweepin/SweepinConnect-iOS/SCSDKProximityServiceKit"
+  s.homepage         = "https://github.com/Sweepin/SweepinConnect-iOS/"
   s.license          = 'MIT'
   s.author           = { "Johan Jégard" => "johan.jegard@sweepin.fr" }
-  s.source           = { :git => "https://github.com/Sweepin/SCSDKProximityServiceKit.git", :tag => s.version.to_s }
+  s.source           = { :git => "https://github.com/Sweepin/SweepinConnect-iOS.git", :tag => s.version.to_s }
   s.social_media_url = 'https://twitter.com/SweepinApps'
 
   s.ios.deployment_target = '8.0'
@@ -38,7 +32,5 @@ Automate the campaign creation process : use our API to connect your existing ba
 
   s.vendored_frameworks = 'SCSDKProximityServiceKit/SCSDKProximityServiceKit.framework'
   s.dependency 'SCSDKCoreKit'
-  #realm here ?
-  #s.libraries = 'sqlite3.0'
-
+  
 end
