@@ -157,11 +157,6 @@
 +(UIImage *)imageNamed:(NSString *)imageName;
 
 /**
- * Use this object to display a campaign from a user action inside your app
- **/
-@property (nonatomic, strong) SCSDKProximityServiceCampaignDisplayManager *displayManager;
-
-/**
  * Use this method to check if our SDK can manage a QRCode
  **/
 -(BOOL)canManageMetadataObjects:(NSArray *)metadataObjects;

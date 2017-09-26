@@ -1,0 +1,46 @@
+/* 
+  Localizable.strings
+  SCSDKProximityServiceKit
+
+  Created by Alex on 14/12/2016.
+  Copyright © 2016 Sweepin. All rights reserved.
+*/
+
+// Qr Code Reader
+"qrcode_reader-navigation_bar_title" = "Scanner un QR Code";
+"qrcode_reader-camera_disabled_alert_title" = "App. photo";
+"qrcode_reader-camera_disabled_alert_message" = "Pour scanner un QR Code, vous devez autoriser l'accès à votre caméra";
+"qrcode_reader-camera_disabled_alert_option_title_cancel" = "Annuler";
+"qrcode_reader-camera_disabled_alert_option_title_settings" = "Paramètres de l'app";
+"qrcode_reader-vcard_add_contact_successful" = "Ajouté aux contacts !";
+
+// Multi campaign view
+"multi_campaign-view-controller-title" = "Informations aux alentours";
+"multi_campaign-close_action_alert_title" = "";
+"multi_campaign-close_action_alert_message" = "";
+//"multi_campaign-close_action_alert_title" = "Etes vous sur ?";
+//"multi_campaign-close_action_alert_message" = "Si vous fermez cet écran, vous ne pourrez plus revoir ces campagnes.";
+"multi_campaign-close_action_alert_option_title_validate" = "Fermer";
+"multi_campaign-close_action_alert_option_title_cancel" = "Annuler";
+
+// Bluetooth
+"bluetooth_error-disabled_from_app_alert_title" = "Activer Bluetooth";
+"bluetooth_error-disabled_from_app_alert_message" = "Certaines infos requièrent le Bluetooth pour être reçues.";
+"bluetooth_error-disabled_from_app_alert_option_title_cancel" = "Annuler";
+"bluetooth_error-disabled_from_app_alert_option_title_validate" = "Activer";
+
+// Notifications
+"notification-multi_campaign_title" = "";
+
+// Simple in-app
+"notification_in_app-agree-action" = "Ok";
+"notification_in_app-disagree-action" = "Annuler";
+
+// Loyalty campaign - full stamp view
+"loyalty_campaign-full_stamp_view_reset_label_title" = "Votre carte est complète, présentez-la pour profiter de l'offre !";
+"loyalty_campaign-full_stamp_view_reset_sublabel_title" = "Désirez-vous réinitialiser votre carte pour recevoir un nouveau tampon à votre prochaine visite ?";
+"loyalty_campaign-full_stamp_view_reset_option_title_cancel" = "Non";
+"loyalty_campaign-full_stamp_view_reset_option_title_validate" = "Oui";
+"loyalty_campaign-full_stamp_view_confirm_alert_title" = "Etes vous sur ?";
+"loyalty_campaign-full_stamp_view_confirm_alert_message" = "Cette action est irréversible, choisissez 'Oui' si vous avez déjà profité de l'offre.";
+"loyalty_campaign-full_stamp_view_reset_done_title" = "Carte réinitialisée !";

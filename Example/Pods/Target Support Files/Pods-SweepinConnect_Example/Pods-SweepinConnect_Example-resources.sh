@@ -77,10 +77,10 @@ EOM
   esac
 }
 if [[ "$CONFIGURATION" == "Debug" ]]; then
-  install_resource "../../SCSDKProximityServiceKit/SCSDKResourcesForProximityServiceKit.bundle"
+  install_resource "$PODS_CONFIGURATION_BUILD_DIR/SCSDKProximityServiceKit/SCSDKResourcesForProximityServiceKit.bundle"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
-  install_resource "../../SCSDKProximityServiceKit/SCSDKResourcesForProximityServiceKit.bundle"
+  install_resource "$PODS_CONFIGURATION_BUILD_DIR/SCSDKProximityServiceKit/SCSDKResourcesForProximityServiceKit.bundle"
 fi
 
 mkdir -p "${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}"

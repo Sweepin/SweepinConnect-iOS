@@ -105,4 +105,13 @@
     return barButtonItems;
 }
 
+-(void)didTapCustomBarButtonItem:(id)sender{
+    UIBarButtonItem *btn = (UIBarButtonItem *)sender;
+    if ([btn.title isEqualToString:@"First"]) {
+        NSLog(@"\n\n DID TAP FIRST BUTTON \n\n");
+    }else if ([btn.title isEqualToString:@"Second"]) {
+        NSLog(@"\n\n DID TAP SECOND BUTTON \n\n");
+    }
+}
+
 @end

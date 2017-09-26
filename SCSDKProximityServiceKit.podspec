@@ -28,7 +28,7 @@ Automate the campaign creation process : use our API to connect your existing ba
   s.social_media_url = 'https://twitter.com/SweepinApps'
 
   s.ios.deployment_target = '8.0'
-  s.resource = 'SCSDKProximityServiceKit/SCSDKResourcesForProximityServiceKit.bundle'
+  s.resource_bundle = { "SCSDKResourcesForProximityServiceKit" => "SCSDKProximityServiceKit/Resources/**/*.{png,lproj,strings,xib}" }
 
   s.vendored_frameworks = 'SCSDKProximityServiceKit/SCSDKProximityServiceKit.framework'
   s.dependency 'SCSDKCoreKit'
