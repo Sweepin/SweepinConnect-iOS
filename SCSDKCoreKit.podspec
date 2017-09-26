@@ -23,7 +23,7 @@ SCSDKCoreKit contains general classes used by our packages.
 
   s.ios.deployment_target = '8.0'
 
-  s.vendored_frameworks = 'SCSDKCoreKit.framework'
+  s.vendored_frameworks = 'SCSDKCoreKit/SCSDKCoreKit.framework'
 
   s.dependency 'Realm'
 
