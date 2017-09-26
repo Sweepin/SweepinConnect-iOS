@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = "SCSDKCoreKit"
-  s.version          = "2.0.0"
+  s.version          = "2.0.1"
   s.summary          = "Tools package for SweepinConnect"
 
   s.description      = <<-DESC
@@ -23,7 +23,7 @@ SCSDKCoreKit contains general classes used by our packages.
 
   s.ios.deployment_target = '8.0'
 
-  s.vendored_frameworks = 'SCSDKCoreKit/SCSDKCoreKit.framework'
+  s.vendored_frameworks = 'SCSDKCoreKit.framework'
 
   s.dependency 'Realm'
 
