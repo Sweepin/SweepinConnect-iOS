@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = "SCSDKCoreKit"
-  s.version          = "2.0.1"
+  s.version          = "2.0.2"
   s.summary          = "Tools package for SweepinConnect"
 
   s.description      = <<-DESC
