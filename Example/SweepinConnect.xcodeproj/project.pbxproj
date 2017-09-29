@@ -25,6 +25,9 @@
 		873B8AEB1B1F5CCA007FD442 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 873B8AEA1B1F5CCA007FD442 /* Main.storyboard */; };
 		FAC74DDA1CF48DF800895CFD /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = FAC74DD91CF48DF800895CFD /* Podfile */; };
 		FAC74DDC1CF4983700895CFD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FAC74DDB1CF4983700895CFD /* LaunchScreen.storyboard */; };
+		FAF115871F7E850F0068D489 /* PRXUserCampaignsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FAF115861F7E850F0068D489 /* PRXUserCampaignsTableViewController.m */; };
+		FAF1158B1F7E856C0068D489 /* PRXUserCampaignTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FAF115891F7E856C0068D489 /* PRXUserCampaignTableViewCell.m */; };
+		FAF1158C1F7E856C0068D489 /* PRXUserCampaignTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FAF1158A1F7E856C0068D489 /* PRXUserCampaignTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,6 +72,11 @@
 		D911219FB7F887DCDCE337A6 /* Pods-SweepinConnect_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SweepinConnect_Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SweepinConnect_Example/Pods-SweepinConnect_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		FAC74DD91CF48DF800895CFD /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; };
 		FAC74DDB1CF4983700895CFD /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
+		FAF115851F7E850F0068D489 /* PRXUserCampaignsTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PRXUserCampaignsTableViewController.h; sourceTree = "<group>"; };
+		FAF115861F7E850F0068D489 /* PRXUserCampaignsTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PRXUserCampaignsTableViewController.m; sourceTree = "<group>"; };
+		FAF115881F7E856C0068D489 /* PRXUserCampaignTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PRXUserCampaignTableViewCell.h; sourceTree = "<group>"; };
+		FAF115891F7E856C0068D489 /* PRXUserCampaignTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PRXUserCampaignTableViewCell.m; sourceTree = "<group>"; };
+		FAF1158A1F7E856C0068D489 /* PRXUserCampaignTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PRXUserCampaignTableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -144,6 +152,11 @@
 				6003F5A8195388D20070C39A /* Images.xcassets */,
 				6003F594195388D20070C39A /* Supporting Files */,
 				FAC74DD91CF48DF800895CFD /* Podfile */,
+				FAF115851F7E850F0068D489 /* PRXUserCampaignsTableViewController.h */,
+				FAF115861F7E850F0068D489 /* PRXUserCampaignsTableViewController.m */,
+				FAF115881F7E856C0068D489 /* PRXUserCampaignTableViewCell.h */,
+				FAF115891F7E856C0068D489 /* PRXUserCampaignTableViewCell.m */,
+				FAF1158A1F7E856C0068D489 /* PRXUserCampaignTableViewCell.xib */,
 			);
 			name = "Example for SweepinConnect";
 			path = SweepinConnect;
@@ -299,6 +312,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FAF1158C1F7E856C0068D489 /* PRXUserCampaignTableViewCell.xib in Resources */,
 				873B8AEB1B1F5CCA007FD442 /* Main.storyboard in Resources */,
 				6003F5A9195388D20070C39A /* Images.xcassets in Resources */,
 				FAC74DDA1CF48DF800895CFD /* Podfile in Resources */,
@@ -417,7 +431,9 @@
 			files = (
 				6003F59E195388D20070C39A /* PRXAppDelegate.m in Sources */,
 				6003F5A7195388D20070C39A /* PRXViewController.m in Sources */,
+				FAF1158B1F7E856C0068D489 /* PRXUserCampaignTableViewCell.m in Sources */,
 				6003F59A195388D20070C39A /* main.m in Sources */,
+				FAF115871F7E850F0068D489 /* PRXUserCampaignsTableViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -2,9 +2,9 @@ PODS:
   - Realm (2.10.2):
     - Realm/Headers (= 2.10.2)
   - Realm/Headers (2.10.2)
-  - SCSDKCoreKit (2.0.1):
+  - SCSDKCoreKit (2.0.2):
     - Realm
-  - SCSDKProximityServiceKit (2.0.1):
+  - SCSDKProximityServiceKit (2.0.2):
     - SCSDKCoreKit
 
 DEPENDENCIES:
@@ -19,8 +19,8 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   Realm: 0ef72b837fb67e9f4b098bac771ddd72c7fdbb69
-  SCSDKCoreKit: 38c1c16bf6b371462d7fe0e39496fade43c5c7d7
-  SCSDKProximityServiceKit: dc2b8ad5da0c0335aa9cb5e3786b749036a7e796
+  SCSDKCoreKit: a676b9c3892a28aa31e30859a1ec178ac768b7a8
+  SCSDKProximityServiceKit: a804b12a83891d65965dc249f8cfcb17bedc4645
 
 PODFILE CHECKSUM: ff7b3e5c46690133e29fa1fe9f4ef230d530ce18
 

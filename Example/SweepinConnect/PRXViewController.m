@@ -9,6 +9,7 @@
 #import "PRXViewController.h"
 @import SCSDKProximityServiceKit;
 #import <SCSDKProximityServiceKit/SCSDKQrCodeReaderViewController.h>
+#import "PRXUserCampaignsTableViewController.h"
 
 @interface PRXViewController ()<SCSDKProximityServiceDelegate, SCSDKProximityServiceCampaignUIDelegate, SCSDKProximityServiceCampaignToolbarUIDelegate>
 
@@ -36,10 +37,26 @@
 
 - (IBAction)getUserCampaignsAction:(id)sender {
     [[SCSDKProximityService sharedInstance]getCampaignsByUserAction:kUserActionReceived withSuccessHandler:^(id object) {
+        PRXUserCampaignsTableViewController *userCampaignsVC = [[PRXUserCampaignsTableViewController alloc]init];
+        [userCampaignsVC setArrCampaigns:object];
+        
+        UINavigationController *navVC = [[UINavigationController alloc]initWithRootViewController:userCampaignsVC];
+        UIBarButtonItem *closeButton = [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemStop target:self action:@selector(dismissUserCampaignsVC:)];
+        navVC.navigationBar.topItem.leftBarButtonItem = closeButton;
+        navVC.navigationBar.tintColor = [UIColor orangeColor];
+        
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [self presentViewController:navVC animated:YES completion:nil];
+        });
+        
         NSLog(@"%@", [object description]);
     } andFailureHandler:^(NSError *error) {
         NSLog(@"Error getting user's campaign : %@", [error description]);
     }];
+}
+
+-(void)dismissUserCampaignsVC:(id)sender{
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 - (IBAction)showQrCodeReaderAction:(id)sender {
