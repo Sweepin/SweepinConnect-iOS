@@ -31,8 +31,8 @@ Watch the analytics data on our charts, and get the visitor's traffic in real ti
 To integrate our ProximityService solution into your Xcode project using CocoaPods, specify it in your Podfile by simply adding the following packages :
 
 ```
-pod 'SCDSDKCoreKit'
-pod 'SCDSDKProximityServiceKit'
+pod 'SCSDKCoreKit'
+pod 'SCSDKProximityServiceKit'
 ```
 
 ## Manual installation
@@ -124,6 +124,7 @@ Now it's time to start all the services. Just call:
 
 
 <br/>	
+
 ## License
 
 SweepinConnect is available under the MIT license. See the LICENSE file for more info.
