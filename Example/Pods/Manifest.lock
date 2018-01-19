@@ -2,26 +2,20 @@ PODS:
   - Realm (2.10.2):
     - Realm/Headers (= 2.10.2)
   - Realm/Headers (2.10.2)
-  - SCSDKCoreKit (2.0.2):
+  - SCSDKCoreKit (2.0.1):
     - Realm
-  - SCSDKProximityServiceKit (2.0.2):
+  - SCSDKProximityServiceKit (2.0.3):
     - SCSDKCoreKit
 
 DEPENDENCIES:
-  - SCSDKCoreKit (from `../`)
-  - SCSDKProximityServiceKit (from `../`)
-
-EXTERNAL SOURCES:
-  SCSDKCoreKit:
-    :path: ../
-  SCSDKProximityServiceKit:
-    :path: ../
+  - SCSDKCoreKit
+  - SCSDKProximityServiceKit
 
 SPEC CHECKSUMS:
   Realm: 0ef72b837fb67e9f4b098bac771ddd72c7fdbb69
-  SCSDKCoreKit: a676b9c3892a28aa31e30859a1ec178ac768b7a8
-  SCSDKProximityServiceKit: a804b12a83891d65965dc249f8cfcb17bedc4645
+  SCSDKCoreKit: 38c1c16bf6b371462d7fe0e39496fade43c5c7d7
+  SCSDKProximityServiceKit: 75ac05376764144188c6a24786ebfff68863c545
 
-PODFILE CHECKSUM: ff7b3e5c46690133e29fa1fe9f4ef230d530ce18
+PODFILE CHECKSUM: 968e6408f46b99a0f3d1c8846343c887af1d7815
 
 COCOAPODS: 1.2.0

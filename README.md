@@ -50,13 +50,15 @@ You also have to add to install Realm manually, please refer to <a href='https:/
 
 
 ### Info.plist
+	
+Open your Info.plist file, then add these three new string key : *NSLocationAlwaysUsageDescription*, *NSLocationAlwaysAndWhenInUseUsageDescription* and *NSLocationWhenInUseUsageDescription*. In the values, set the messages you want to display to users to request their permission for localisation updates :
 
-To use location services in your app, you have to add the **NSLocationAlwaysUsageDescription** key:
-
-Open your Info.plist file, then add a new string key *NSLocationAlwaysUsageDescription*. In the value, set the message you want to display to users to request their permission for background localisation updates :
-
-    <key>NSLocationAlwaysUsageDescription</key>
-    <string>Your message goes here</string>
+	<key>NSLocationAlwaysUsageDescription</key>
+		<string>Your message goes here</string>
+	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+		<string>Your message goes here</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+		<string>Your message goes here</string>
 
 For devices running iOS 9.0+, you need to describe your app’s intended HTTP connection behavior, including for Sweepin servers, by adding the **NSAppTransportSecurity** key
 

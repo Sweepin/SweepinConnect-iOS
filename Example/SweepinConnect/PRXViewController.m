@@ -27,6 +27,11 @@
     [[SCSDKProximityService sharedInstance]setCampaignsToolbarUIDelegate:self];
     [[SCSDKProximityService sharedInstance]setCampaignsTopbarUIDelegate:self];
     
+    [[SCSDKProximityService sharedInstance]registerIdentifier:@"toto" withUserInfos:@{@"age":@"42", @"firstname":@"roger"} withSuccessHandler:^(id object) {
+        NSLog(@"Identifier successfully registered");
+    } andFailureHandler:^(NSError *error) {
+        NSLog(@"Failed to register identifier : %@", [error description]);
+    }];
 	// Do any additional setup after loading the view, typically from a nib.
 }
 
