@@ -28,4 +28,7 @@
 @property (nonatomic) NSArray *transmitters;
 @property (nonatomic) NSArray *campaigns;
 
+@property (nonatomic) NSString *ipsUuid;
+@property (nonatomic) int useIps;
+
 @end

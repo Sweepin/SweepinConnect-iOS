@@ -7,9 +7,9 @@
 //
 
 #import "PRXViewController.h"
-@import SCSDKProximityServiceKit;
-#import <SCSDKProximityServiceKit/SCSDKQrCodeReaderViewController.h>
+
 #import "PRXUserCampaignsTableViewController.h"
+@import SCSDKProximityServiceKit;
 
 @interface PRXViewController ()<SCSDKProximityServiceDelegate, SCSDKProximityServiceCampaignUIDelegate, SCSDKProximityServiceCampaignToolbarUIDelegate>
 
@@ -27,7 +27,7 @@
     [[SCSDKProximityService sharedInstance]setCampaignsToolbarUIDelegate:self];
     [[SCSDKProximityService sharedInstance]setCampaignsTopbarUIDelegate:self];
     
-    [[SCSDKProximityService sharedInstance]registerIdentifier:@"toto" withUserInfos:@{@"age":@"42", @"firstname":@"roger"} withSuccessHandler:^(id object) {
+    [[SCSDKProximityService sharedInstance]registerIdentifier:@"toto" withUserInfos:@{@"age":@"42", @"firstname":@"michel"} withSuccessHandler:^(id object) {
         NSLog(@"Identifier successfully registered");
     } andFailureHandler:^(NSError *error) {
         NSLog(@"Failed to register identifier : %@", [error description]);

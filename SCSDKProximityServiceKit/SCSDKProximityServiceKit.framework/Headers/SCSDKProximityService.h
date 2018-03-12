@@ -127,7 +127,7 @@
  }
  };
  *
- *  [[SCSDKApplicationDelegate sharedInstance]registerIdentifier:@"myUniqueIdentifier" withUserInfos:myDict withSuccessHandler:^(id object) {
+ *  [[SCSDKProximityService sharedInstance]registerIdentifier:@"myUniqueIdentifier" withUserInfos:myDict withSuccessHandler:^(id object) {
  *      // Success
  *  } andFailureHandler:^(NSError *error) {
  *      // Failure
@@ -135,6 +135,8 @@
  *
  **/
 -(void)registerIdentifier:(NSString*)identifier withUserInfos:(NSDictionary*) userInfos withSuccessHandler:(void (^)(id object))success andFailureHandler:(void (^)(NSError *error))failure;
+
+-(void)removeIdentifier;
 
 /**
  * You need to call this in your AppDelegate's didReceiveLocalNotification method.
@@ -160,7 +162,7 @@
  * Use this method to check if our SDK can manage a QRCode
  **/
 -(BOOL)canManageMetadataObjects:(NSArray *)metadataObjects;
-    
+
 /**
  * Use this method to manage the scan of a QRCode
  **/
@@ -177,5 +179,10 @@
  * Displaying a campaign with our UI Management
  **/
 -(void)displayCampaign:(SCSDKCampaign *)campaign;
+
+/**
+ * Returns the base url for accessing medias
+ **/
+@property (nonatomic,readonly,strong) NSString *mediaBaseUrl;
 
 @end

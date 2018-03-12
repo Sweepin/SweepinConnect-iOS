@@ -12,6 +12,7 @@
 #import "SCSDKTransmitter.h"
 
 @interface SCSDKCampaign : SCSDKBaseEntity
+//#warning @TODO Check if int is more reliable than NSString on args like favorites (faster comparison?)
 @property (nonatomic) int id;
 @property (nonatomic) NSString *type;
 @property (nonatomic) NSString *templateType;
@@ -30,6 +31,7 @@
 @property (nonatomic) NSString *nbStamps;
 @property (nonatomic) NSString *media;
 
+// Set programmatically
 @property (nonatomic) NSString *transmitterId;
 @property (nonatomic) NSString *favorite;
 @property (nonatomic) NSString *locked;

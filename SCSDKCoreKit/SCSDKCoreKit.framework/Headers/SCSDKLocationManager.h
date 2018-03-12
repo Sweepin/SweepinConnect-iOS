@@ -30,6 +30,7 @@
 -(void)locationManager:(CLLocationManager *)manager didStartMonitoringForRegion:(CLRegion *)region;
 -(void)locationManager:(CLLocationManager *)manager didDetermineState:(CLRegionState)state forRegion:(CLRegion *)region;
 
+-(BOOL)locationManagerShouldDisplayHeadingCalibration:(CLLocationManager *)manager;
 @end
 
 @interface SCSDKLocationManager : CLLocationManager

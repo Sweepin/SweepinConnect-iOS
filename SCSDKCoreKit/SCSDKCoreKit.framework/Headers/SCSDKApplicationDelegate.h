@@ -9,12 +9,15 @@
 #import <Foundation/Foundation.h>
 
 #import "SCSDKLocationManager.h"
+#import "SCSDKMotionManager.h"
 
 @interface SCSDKApplicationDelegate : NSObject{
 SCSDKLocationManager *locationManager;
+SCSDKMotionManager *motionManager;
 }
 
 @property (nonatomic, strong) SCSDKLocationManager *locationManager;
+@property (nonatomic, strong) SCSDKMotionManager *motionManager;
 
 /**
  * Return the SCSDKApplicationDelegate shared instance.

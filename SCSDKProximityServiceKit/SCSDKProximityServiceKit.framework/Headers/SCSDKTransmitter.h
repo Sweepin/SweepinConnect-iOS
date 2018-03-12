@@ -18,7 +18,9 @@
 @property (nonatomic) NSString *url;
 @property (nonatomic) int *poiId;
 
+#warning @RENAME
 @property (nonatomic) NSArray *animations;
+//@property (nonatomic) NSArray *campaigns;
 
 @property (nonatomic) NSArray *poi;
 
