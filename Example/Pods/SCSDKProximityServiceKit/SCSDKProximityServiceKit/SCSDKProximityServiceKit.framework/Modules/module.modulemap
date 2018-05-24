@@ -1,0 +1,6 @@
+framework module SCSDKProximityServiceKit {
+  umbrella header "SCSDKProximityServiceKit.h"
+
+  export *
+  module * { export * }
+}

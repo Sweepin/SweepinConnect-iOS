@@ -19,3 +19,6 @@ FOUNDATION_EXPORT const unsigned char SCSDKProximityServiceKitVersionString[];
 
 #import <SCSDKProximityServiceKit/SCSDKProximityService.h>
 #import <SCSDKProximityServiceKit/SCSDKQrCodeReaderViewController.h>
+#import <SCSDKProximityServiceKit/SCSDKCampaign.h>
+#import <SCSDKProximityServiceKit/SCSDKPoi.h>
+#import <SCSDKProximityServiceKit/SCSDKTransmitter.h>

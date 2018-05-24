@@ -8,6 +8,7 @@
 
 #import "PRXAppDelegate.h"
 @import SCSDKProximityServiceKit;
+#import "SweepinConnect_Example-Swift.h"
 
 @implementation PRXAppDelegate
 
@@ -16,6 +17,9 @@
     // Override point for customization after application launch.
     [[SCSDKProximityService sharedInstance]initWithAppId:@"tes59b924541a2b3" andSecret:@"a338258c-bd1c-4aa1-a6b7-5ae3af84afc2"];
     [[SCSDKProximityService sharedInstance]start];
+    
+    SwiftExample *instance = [SwiftExample new];
+    [instance getUserCampaigns];
     
     return YES;
 }

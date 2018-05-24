@@ -55,7 +55,7 @@
     [cell.campaignImageView setImageURL:nil];
     [cell.campaignImageView setImage:nil];
     
-    SCSDKCampaign *campaign = [[SCSDKCampaign alloc]initWithProperties:[_arrCampaigns objectAtIndex:indexPath.row]];
+    SCSDKCampaign *campaign = [_arrCampaigns objectAtIndex:indexPath.row];
     [cell.campaignTitleLabel setText:[campaign title]];
     [cell.campaignImageView setImageURL:[NSURL URLWithString:concatString(@"https://sweepin.fr", campaign.image)]];
     
@@ -63,7 +63,7 @@
 }
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-    SCSDKCampaign *campaign = [[SCSDKCampaign alloc]initWithProperties:[_arrCampaigns objectAtIndex:indexPath.row]];
+    SCSDKCampaign *campaign = [_arrCampaigns objectAtIndex:indexPath.row];
     [[SCSDKProximityService sharedInstance]displayCampaign:campaign];
 }
 

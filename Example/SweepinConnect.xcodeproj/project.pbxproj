@@ -25,6 +25,7 @@
 		873B8AEB1B1F5CCA007FD442 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 873B8AEA1B1F5CCA007FD442 /* Main.storyboard */; };
 		FAC74DDA1CF48DF800895CFD /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = FAC74DD91CF48DF800895CFD /* Podfile */; };
 		FAC74DDC1CF4983700895CFD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FAC74DDB1CF4983700895CFD /* LaunchScreen.storyboard */; };
+		FACBE16E20B6B32900777B58 /* SwiftExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = FACBE16D20B6B32900777B58 /* SwiftExample.swift */; };
 		FAF115871F7E850F0068D489 /* PRXUserCampaignsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FAF115861F7E850F0068D489 /* PRXUserCampaignsTableViewController.m */; };
 		FAF1158B1F7E856C0068D489 /* PRXUserCampaignTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FAF115891F7E856C0068D489 /* PRXUserCampaignTableViewCell.m */; };
 		FAF1158C1F7E856C0068D489 /* PRXUserCampaignTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FAF1158A1F7E856C0068D489 /* PRXUserCampaignTableViewCell.xib */; };
@@ -72,6 +73,8 @@
 		D911219FB7F887DCDCE337A6 /* Pods-SweepinConnect_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SweepinConnect_Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SweepinConnect_Example/Pods-SweepinConnect_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		FAC74DD91CF48DF800895CFD /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; };
 		FAC74DDB1CF4983700895CFD /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
+		FACBE16C20B6B32900777B58 /* SweepinConnect_Example-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SweepinConnect_Example-Bridging-Header.h"; sourceTree = "<group>"; };
+		FACBE16D20B6B32900777B58 /* SwiftExample.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftExample.swift; sourceTree = "<group>"; };
 		FAF115851F7E850F0068D489 /* PRXUserCampaignsTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PRXUserCampaignsTableViewController.h; sourceTree = "<group>"; };
 		FAF115861F7E850F0068D489 /* PRXUserCampaignsTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PRXUserCampaignsTableViewController.m; sourceTree = "<group>"; };
 		FAF115881F7E856C0068D489 /* PRXUserCampaignTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PRXUserCampaignTableViewCell.h; sourceTree = "<group>"; };
@@ -157,6 +160,8 @@
 				FAF115881F7E856C0068D489 /* PRXUserCampaignTableViewCell.h */,
 				FAF115891F7E856C0068D489 /* PRXUserCampaignTableViewCell.m */,
 				FAF1158A1F7E856C0068D489 /* PRXUserCampaignTableViewCell.xib */,
+				FACBE16D20B6B32900777B58 /* SwiftExample.swift */,
+				FACBE16C20B6B32900777B58 /* SweepinConnect_Example-Bridging-Header.h */,
 			);
 			name = "Example for SweepinConnect";
 			path = SweepinConnect;
@@ -277,6 +282,7 @@
 					6003F589195388D20070C39A = {
 						DevelopmentTeam = E6B4L73UU6;
 						DevelopmentTeamName = "Solo Agilis";
+						LastSwiftMigration = 0930;
 						SystemCapabilities = {
 							com.apple.BackgroundModes = {
 								enabled = 1;
@@ -406,7 +412,7 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-SweepinConnect_Example/Pods-SweepinConnect_Example-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
-				"${PODS_ROOT}/../../SCSDKCoreKit/SCSDKCoreKit.framework",
+				"${PODS_ROOT}/SCSDKCoreKit/SCSDKCoreKit/SCSDKCoreKit.framework",
 				"${PODS_ROOT}/../../SCSDKProximityServiceKit/SCSDKProximityServiceKit.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
@@ -443,6 +449,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6003F59E195388D20070C39A /* PRXAppDelegate.m in Sources */,
+				FACBE16E20B6B32900777B58 /* SwiftExample.swift in Sources */,
 				6003F5A7195388D20070C39A /* PRXViewController.m in Sources */,
 				FAF1158B1F7E856C0068D489 /* PRXUserCampaignTableViewCell.m in Sources */,
 				6003F59A195388D20070C39A /* main.m in Sources */,
@@ -566,13 +573,18 @@
 			baseConfigurationReference = D911219FB7F887DCDCE337A6 /* Pods-SweepinConnect_Example.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				ENABLE_BITCODE = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "SweepinConnect/SweepinConnect-Prefix.pch";
 				INFOPLIST_FILE = "SweepinConnect/SweepinConnect-Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MODULE_NAME = ExampleApp;
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.demo.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "SweepinConnect/SweepinConnect_Example-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -582,13 +594,17 @@
 			baseConfigurationReference = 22E911DD3B3CCEFC37B83412 /* Pods-SweepinConnect_Example.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				ENABLE_BITCODE = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "SweepinConnect/SweepinConnect-Prefix.pch";
 				INFOPLIST_FILE = "SweepinConnect/SweepinConnect-Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MODULE_NAME = ExampleApp;
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.demo.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "SweepinConnect/SweepinConnect_Example-Bridging-Header.h";
+				SWIFT_VERSION = 3.0;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
@@ -597,6 +613,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 2F93842B1358D480D316FFEC /* Pods-SweepinConnect_Tests.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
@@ -621,6 +638,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 2DE4A035037BE09208621A2C /* Pods-SweepinConnect_Tests.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
