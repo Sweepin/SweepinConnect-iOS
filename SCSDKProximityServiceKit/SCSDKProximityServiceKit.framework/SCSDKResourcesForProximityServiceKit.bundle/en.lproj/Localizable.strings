@@ -44,3 +44,8 @@
 "loyalty_campaign-full_stamp_view_confirm_alert_title" = "Are you sure ?";
 "loyalty_campaign-full_stamp_view_confirm_alert_message" = "This action is irreversible, choose 'Yes' if you already took advantage of the offer.";
 "loyalty_campaign-full_stamp_view_reset_done_title" = "Card resetted";
+
+// Apointment Dialog
+"appointment_dialog_default_title" = "Appointment";
+"appointment_dialog_btn_positive" = "Guide me";
+"appointment_dialog_notification_message" = "You have an appointment";

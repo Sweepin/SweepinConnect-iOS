@@ -13,33 +13,33 @@
 
 @interface SCSDKCampaign : SCSDKBaseEntity
 //#warning @TODO Check if int is more reliable than NSString on args like favorites (faster comparison?)
-@property (nonatomic) int id;
-@property (nonatomic) NSString *type;
-@property (nonatomic) NSString *templateType;
-@property (nonatomic) NSString *identifier;
-@property (nonatomic) NSString *title;
-@property (nonatomic) NSString *topbarTitle;
-@property (nonatomic) NSString *contentText;
-@property (nonatomic) NSString *contentBackgroundColor;
-@property (nonatomic) NSString *contentFontColor;
-@property (nonatomic) NSString *startDate;
-@property (nonatomic) NSString *endDate;
-@property (nonatomic) NSString *banner;
-@property (nonatomic) NSString *image;
-@property (nonatomic) NSString *webviewUrl;
-@property (nonatomic) NSString *topbarButton;
-@property (nonatomic) NSString *nbStamps;
-@property (nonatomic) NSString *media;
+@property (nonatomic, assign) int id;
+@property (nonatomic, retain) NSString *type;
+@property (nonatomic, retain) NSString *templateType;
+@property (nonatomic, retain) NSString *identifier;
+@property (nonatomic, retain) NSString *title;
+@property (nonatomic, retain) NSString *topbarTitle;
+@property (nonatomic, retain) NSString *contentText;
+@property (nonatomic, retain) NSString *contentBackgroundColor;
+@property (nonatomic, retain) NSString *contentFontColor;
+@property (nonatomic, retain) NSString *startDate;
+@property (nonatomic, retain) NSString *endDate;
+@property (nonatomic, retain) NSString *banner;
+@property (nonatomic, retain) NSString *image;
+@property (nonatomic, retain) NSString *webviewUrl;
+@property (nonatomic, retain) NSString *topbarButton;
+@property (nonatomic, retain) NSString *nbStamps;
+@property (nonatomic, retain) NSString *media;
 
 // Set programmatically
-@property (nonatomic) NSString *transmitterId;
-@property (nonatomic) NSString *favorite;
-@property (nonatomic) NSString *locked;
-@property (nonatomic) NSString *timeLeft;
-@property (nonatomic) NSString *userStamps;
-@property (nonatomic) NSString *backgroundFetch;
+@property (nonatomic, retain) NSString *transmitterId;
+@property (nonatomic, retain) NSString *favorite;
+@property (nonatomic, retain) NSString *locked;
+@property (nonatomic, retain) NSString *timeLeft;
+@property (nonatomic, retain) NSString *userStamps;
+@property (nonatomic, retain) NSString *backgroundFetch;
 
-@property (nonatomic) SCSDKPoi *poi;
-@property (nonatomic) SCSDKTransmitter *transmitter;
+@property (nonatomic, retain) SCSDKPoi *poi;
+@property (nonatomic, retain) SCSDKTransmitter *transmitter;
 
 @end

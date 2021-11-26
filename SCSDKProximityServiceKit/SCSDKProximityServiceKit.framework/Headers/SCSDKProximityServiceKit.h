@@ -17,8 +17,10 @@ FOUNDATION_EXPORT const unsigned char SCSDKProximityServiceKitVersionString[];
 // In this header, you should import all the public headers of your framework using statements like #import <SCSDKProximityServiceKit/PublicHeader.h>
 
 
+#import <SCSDKProximityServiceKit/SCSDKProximityServiceManager.h>
 #import <SCSDKProximityServiceKit/SCSDKProximityService.h>
 #import <SCSDKProximityServiceKit/SCSDKQrCodeReaderViewController.h>
 #import <SCSDKProximityServiceKit/SCSDKCampaign.h>
 #import <SCSDKProximityServiceKit/SCSDKPoi.h>
 #import <SCSDKProximityServiceKit/SCSDKTransmitter.h>
+#import <SCSDKProximityServiceKit/SCSDKAppointment.h>

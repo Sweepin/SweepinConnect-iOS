@@ -48,5 +48,6 @@
  * Utils
  **/
 +(NSString*)jsonToString:(NSObject *)data;
+-(void)cURLWithMethod:(NSString *)httpMethod URLPath:(NSString *)urlPath data:(NSDictionary *)data successHandler:(void (^)(id object))success failureHandler:(void (^)(NSError *error))failure;
 
 @end

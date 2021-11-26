@@ -10,14 +10,17 @@
 #import <CoreLocation/CoreLocation.h>
 #import <UIKit/UIKit.h>
 #import "SCSDKProximityServiceDisplayDelegate.h"
+#import "SCSDKProximityServiceNetworkManager.h"
+
 
 #define kUserActionReceived @"received_background,received_foreground,anim_received"
 #define kUserActionReceivedBackground @"received_background"
 #define kUserActionReceivedForeground @"received_foreground"
 #define kUserActionSaved @"saved"
 
-@class SCSDKProximityServiceCampaignDisplayManager;
+@class SCSDKProximityServiceManager;
 @class SCSDKCampaign;
+@class SCSDKAppointment;
 
 @protocol SCSDKProximityServiceDelegate <NSObject>
 
@@ -26,10 +29,17 @@
 -(void)didDisplayCampaign:(SCSDKCampaign *)campaign firstTime:(BOOL)firstTime;
 -(void)handleActionForCampaignIdentifier:(NSString *)identifier;
 
+-(void)didReceiveAppointments:(NSArray *)appointments;
+-(void)didDisplayAppointment:(SCSDKAppointment *)appointment firstTime:(BOOL)firstTime;
+-(void)handleActionForDestination:(int)ipsTriggerInfoId;
+
 -(BOOL)shouldTapRightButtonWithCampaigns:(NSArray *)campaigns;
 -(BOOL)shouldTapLeftButtonWithCampaigns:(NSArray *)campaigns;
 -(void)didTapRightButtonWithCampaigns:(NSArray *)campaigns;
 -(void)didTapLeftButtonWithCampaigns:(NSArray *)campaigns;
+
+- (void)didEnterRegion:(CLCircularRegion*) region;
+- (void)didExitRegion:(CLCircularRegion*) region;
 
 @end
 
@@ -41,6 +51,8 @@
 +(SCSDKProximityService *)sharedInstance;
 
 @property (nonatomic, strong) id<SCSDKProximityServiceDelegate> delegate;
+@property (nonatomic, strong, readonly) SCSDKProximityServiceNetworkManager *networkManager;
+
 
 #pragma mark AppId / AppSecret
 
@@ -50,6 +62,14 @@
  * If you do not have your app id and secret -provided by the Sweepin registration process- please contact the Sweepin team.
  **/
 -(void)initWithAppId:(NSString*) appId andSecret:(NSString*) secret;
+
+
+/**
+* Call this method on your service instance to setup geofencing behavior as one-and-only zone
+*
+* If you don't do that, Proximity will create and register regions as long as the user position change
+**/
+- (void)registerGeofencing:(CLCircularRegion*) region;
     
 #pragma mark Parameters
 

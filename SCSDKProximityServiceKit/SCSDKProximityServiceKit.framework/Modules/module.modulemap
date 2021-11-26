@@ -4,3 +4,8 @@ framework module SCSDKProximityServiceKit {
   export *
   module * { export * }
 }
+
+module SCSDKProximityServiceKit.Swift {
+    header "SCSDKProximityServiceKit-Swift.h"
+    requires objc
+}

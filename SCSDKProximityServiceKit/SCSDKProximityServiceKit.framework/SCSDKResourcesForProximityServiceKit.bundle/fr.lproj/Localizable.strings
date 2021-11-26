@@ -44,3 +44,9 @@
 "loyalty_campaign-full_stamp_view_confirm_alert_title" = "Etes vous sur ?";
 "loyalty_campaign-full_stamp_view_confirm_alert_message" = "Cette action est irréversible, choisissez 'Oui' si vous avez déjà profité de l'offre.";
 "loyalty_campaign-full_stamp_view_reset_done_title" = "Carte réinitialisée !";
+
+// Apointment Dialog
+"appointment_dialog_default_title" = "Rendez-vous";
+"appointment_dialog_btn_positive" = "Guidez moi";
+"appointment_dialog_notification_message" = "Vous avez un rendez-vous";
+

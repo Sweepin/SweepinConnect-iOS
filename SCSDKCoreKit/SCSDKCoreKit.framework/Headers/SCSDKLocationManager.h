@@ -22,6 +22,7 @@
 
 @protocol SCSDKLocationManagerIndoorPositioningSystemDataSource
 @required
+-(void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations;
 -(void)locationManager:(CLLocationManager *)manager didUpdateHeading:(CLHeading *)heading;
 
 -(void)locationManager:(CLLocationManager *)manager didRangeBeacons:(NSArray *)beacons inRegion:(CLBeaconRegion *)region;

@@ -1,6 +1,11 @@
 framework module SCSDKCoreKit {
-  umbrella header "SCSDKCoreKit.h"
+  umbrella header "SCSDKCoreKit-umbrella.h"
 
   export *
   module * { export * }
+}
+
+module SCSDKCoreKit.Swift {
+    header "SCSDKCoreKit-Swift.h"
+    requires objc
 }
