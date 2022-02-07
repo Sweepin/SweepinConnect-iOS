@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = "SCSDKProximityServiceKit"
-  s.version          = "2.0.5"
+  s.version          = "2.0.7"
   s.summary          = "SweepinConnect Proximity Service solutions package"
 
   s.description      = <<-DESC
