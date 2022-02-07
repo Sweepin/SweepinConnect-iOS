@@ -40,7 +40,7 @@
 
 @property (nonatomic, assign) int poiId;
 
-@property (nonatomic, retain) NSArray<NSDictionary*> *campaigns;
+@property (nonatomic, retain) NSArray<NSDictionary*> *animations;
 @property (nonatomic, retain) NSArray<NSDictionary*> *poi;
 
 @end

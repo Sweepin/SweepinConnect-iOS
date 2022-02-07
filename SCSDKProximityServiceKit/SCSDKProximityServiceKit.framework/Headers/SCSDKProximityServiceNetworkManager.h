@@ -11,7 +11,7 @@
 
 @interface SCSDKProximityServiceNetworkManager : SCSDKNetworkManager
 
--(id)initWithAppId:(NSString*) appId appSecret:(NSString*) appSecret andServerBaseUrl:(NSString*) serverBaseUrl;
+-(id)initWithAppId:(NSString*) appId andSecret:(NSString*) appSecret;
 
 -(void)postCampaignLogs:(NSArray *)arrLogs withSuccessHandler:(void (^)(id object))success andFailureHandler:(void (^)(NSError *error))failure;
 
@@ -20,8 +20,6 @@
 @property (nonatomic, assign) BOOL useASIdentifier;
 
 @property (nonatomic, strong, readonly) NSString *appVersion;
-
-@property (nonatomic, strong, readonly) NSString *serverBaseUrl;
 
 @property (nonatomic, strong, readonly) NSString *mediaBaseUrl;
 @end

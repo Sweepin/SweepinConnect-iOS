@@ -27,8 +27,6 @@
 @property (nonatomic, strong, nonnull) NSString* updated;
 @property (nonatomic, assign) int status;
 @property (nonatomic, assign) int archive;
-@property (nonatomic, assign) int eligible;
-@property (nonatomic, strong, nonnull) NSString* _admissionStatus;
 
 @property (nonatomic, strong, nonnull) SCSDKIPSTriggerInfo* ipsTriggerInfo;
 @property (nonatomic, strong, nullable) SCSDKContentTemplate* contentTemplate;

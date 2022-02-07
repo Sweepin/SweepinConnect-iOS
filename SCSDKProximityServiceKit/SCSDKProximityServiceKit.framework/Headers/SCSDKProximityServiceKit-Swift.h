@@ -210,17 +210,14 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 
 
 
-
 @class SCSDKAppointment;
-@class SCSDKCampaign;
-@class NSDictionary;
-@class NSMutableArray;
 @class NSString;
+@class SCSDKCampaign;
+@class NSMutableArray;
 
 @interface SCSDKProximityServiceManager (SWIFT_EXTENSION(SCSDKProximityServiceKit))
-- (void)manageAppointmentDisplayWithAppointments:(NSArray<SCSDKAppointment *> * _Nonnull)appointments;
 - (void)displayAppointmentWithAppointment:(SCSDKAppointment * _Nonnull)appointment;
-- (void)presentLocalNotificationWithAttachedAppointmentsWithAppointment:(SCSDKAppointment * _Nonnull)appointment;
+- (void)presentLocalNotificationWithAttachedAppointmentsWithAppointmentDict:(NSDictionary<NSString *, id> * _Nonnull)appointmentDict;
 - (void)presentLocalNotificationWithCampaigns:(NSArray<SCSDKCampaign *> * _Nonnull)campaigns;
 - (NSMutableArray * _Nonnull)convertToCampaignsWithUserInfo:(NSDictionary * _Nonnull)userInfo SWIFT_WARN_UNUSED_RESULT;
 - (void)logInFileWithString:(NSString * _Nonnull)string;
