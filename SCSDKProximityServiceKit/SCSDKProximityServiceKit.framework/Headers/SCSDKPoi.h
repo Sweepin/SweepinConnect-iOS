@@ -30,5 +30,6 @@
 
 @property (nonatomic) NSString *ipsUuid;
 @property (nonatomic) int useIps;
+@property (nonatomic, strong, nonnull) NSString* admissionType;
 
 @end

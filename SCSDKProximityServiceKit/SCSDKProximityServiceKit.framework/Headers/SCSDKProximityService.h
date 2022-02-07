@@ -61,7 +61,7 @@
  *
  * If you do not have your app id and secret -provided by the Sweepin registration process- please contact the Sweepin team.
  **/
--(void)initWithAppId:(NSString*) appId andSecret:(NSString*) secret;
+-(void)initWithAppId:(NSString*) appId appSecret:(NSString*) appSecret andServerBaseUrl:(NSString*) serverBaseUrl;
 
 
 /**

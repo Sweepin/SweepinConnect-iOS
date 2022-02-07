@@ -14,4 +14,5 @@
 @interface SCSDKTransmitterResponseData : SCSDKBaseEntity
 @property (nonatomic, nonnull) NSArray<SCSDKTransmitter *> *transmitters;
 @property (nonatomic, nonnull) NSArray<SCSDKAppointment *> *appointments;
+@property (nonatomic, nonnull) NSArray<SCSDKAppointment *> *allAppointments;
 @end

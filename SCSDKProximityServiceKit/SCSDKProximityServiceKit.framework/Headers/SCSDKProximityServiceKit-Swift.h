@@ -188,6 +188,7 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 #if __has_warning("-Watimport-in-framework-header")
 #pragma clang diagnostic ignored "-Watimport-in-framework-header"
 #endif
+@import Foundation;
 #endif
 
 #import <SCSDKProximityServiceKit/SCSDKProximityServiceKit.h>
@@ -207,11 +208,24 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 # pragma pop_macro("any")
 #endif
 
+
+
+
 @class SCSDKAppointment;
+@class SCSDKCampaign;
+@class NSDictionary;
+@class NSMutableArray;
+@class NSString;
 
 @interface SCSDKProximityServiceManager (SWIFT_EXTENSION(SCSDKProximityServiceKit))
+- (void)manageAppointmentDisplayWithAppointments:(NSArray<SCSDKAppointment *> * _Nonnull)appointments;
 - (void)displayAppointmentWithAppointment:(SCSDKAppointment * _Nonnull)appointment;
+- (void)presentLocalNotificationWithAttachedAppointmentsWithAppointment:(SCSDKAppointment * _Nonnull)appointment;
+- (void)presentLocalNotificationWithCampaigns:(NSArray<SCSDKCampaign *> * _Nonnull)campaigns;
+- (NSMutableArray * _Nonnull)convertToCampaignsWithUserInfo:(NSDictionary * _Nonnull)userInfo SWIFT_WARN_UNUSED_RESULT;
+- (void)logInFileWithString:(NSString * _Nonnull)string;
 @end
+
 
 #if __has_attribute(external_source_symbol)
 # pragma clang attribute pop
