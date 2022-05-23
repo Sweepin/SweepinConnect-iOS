@@ -44,6 +44,7 @@
 
 -(void)deleteFromUrlPath:(NSString *)urlPath options:(NSDictionary*)options successHandler:(void (^)(id object))success failureHandler:(void (^)(NSError *error))failure;
 
+-(void)patchToUrlPath:(NSString *)urlPath options:(NSDictionary*)options data:(NSDictionary *)data successHandler:(void (^)(id object))success failureHandler:(void (^)(NSError *error))failure;
 /**
  * Utils
  **/
